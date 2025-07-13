@@ -6,6 +6,9 @@ import { FeaturesSection } from "@/components/features/FeaturesSection";
 import { PricingSection } from "@/components/pricing/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import StatsSection from "@/components/StatsSection";
+import IntegrationSection from "@/components/IntegrationSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
@@ -13,19 +16,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black text-foreground">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="relative container px-4 pt-40 pb-20"
       >
         {/* Background */}
-        <div 
-          className="absolute inset-0 -z-10 bg-[#0A0A0A]"
-        />
-        
+        <div className="absolute inset-0 -z-10 bg-[#0A0A0A]" />
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -34,31 +35,35 @@ const Index = () => {
         >
           <span className="text-sm font-medium">
             <Command className="w-4 h-4 inline-block mr-2" />
-            Smart workplace commute solution
+            Smart E-Mobility Solutions for Enterprises
           </span>
         </motion.div>
-        
+
         <div className="max-w-4xl relative z-10">
           <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
             <span className="text-gray-200">
-              <TextGenerateEffect words="Transform your" />
+              <TextGenerateEffect words="Revolutionize your" />
             </span>
             <br />
             <span className="text-white font-medium">
-              <TextGenerateEffect words="daily commute" />
+              <TextGenerateEffect words="workplace mobility" />
             </span>
           </h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl text-left"
           >
-            Optimize your daily commute with smart route planning, real-time updates, and sustainable transportation options.{" "}
-            <span className="text-white">Start your journey today.</span>
+            Velora offers intelligent e-mobility solutions for companies,
+            providing optimized transportation facilities with cab/shuttle
+            sharing, smart routing, and comprehensive fleet management.{" "}
+            <span className="text-white">
+              Transform your employee transportation today.
+            </span>
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,10 +71,10 @@ const Index = () => {
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
             <Button size="lg" className="button-gradient">
-              Plan Your Commute
+              Get Started
             </Button>
             <Button size="lg" variant="link" className="text-white">
-              Explore Routes <ArrowRight className="ml-2 w-4 h-4" />
+              Request Demo <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </motion.div>
         </div>
@@ -93,14 +98,27 @@ const Index = () => {
       {/* Logo Carousel */}
       <LogoCarousel />
 
+      {/* Stats Section */}
+      <StatsSection />
+
       {/* Features Section */}
       <div id="features" className="bg-black">
         <FeaturesSection />
       </div>
 
+      {/* Benefits Section */}
+      <div className="bg-black">
+        <BenefitsSection />
+      </div>
+
       {/* Pricing Section */}
       <div id="pricing" className="bg-black">
         <PricingSection />
+      </div>
+
+      {/* Integration Section */}
+      <div className="bg-black">
+        <IntegrationSection />
       </div>
 
       {/* Testimonials Section */}
@@ -110,12 +128,13 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="container px-4 py-20 relative bg-black">
-        <div 
+        <div
           className="absolute inset-0 opacity-40"
           style={{
-            backgroundImage: 'url("/lovable-uploads/21f3edfb-62b5-4e35-9d03-7339d803b980.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage:
+              'url("/lovable-uploads/21f3edfb-62b5-4e35-9d03-7339d803b980.png")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
         <motion.div
@@ -125,10 +144,11 @@ const Index = () => {
           className="bg-[#0A0A0A]/80 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 text-center relative z-10"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to optimize your commute?
+            Ready to transform your company's mobility?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals who have already transformed their daily journey.
+            Join leading companies who have revolutionized their employee
+            transportation with Velora's intelligent e-mobility solutions.
           </p>
           <Button size="lg" className="button-gradient">
             Get Started

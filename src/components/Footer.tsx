@@ -10,7 +10,8 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="font-medium text-lg">Velora</h3>
               <p className="text-sm text-muted-foreground">
-                Transforming workplace commutes with smart mobility solutions.
+                Revolutionizing workplace mobility with intelligent e-mobility
+                solutions for modern enterprises.
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon">
@@ -23,32 +24,76 @@ const Footer = () => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-medium">Commute</h4>
+              <h4 className="font-medium">Solutions</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Route Planning
+                  <a
+                    href="#features"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Cab & Shuttle Sharing
                   </a>
                 </li>
                 <li>
-                  <a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Pricing
+                  <a
+                    href="#features"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Company Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#features"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Mobile App
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#pricing"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Working Models
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-medium">Resources</h4>
+              <h4 className="font-medium">Features</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Commute Guide
+                  <a
+                    href="#features"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Route Optimization
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Traffic Analytics
+                  <a
+                    href="#features"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Fleet Analytics
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#features"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Green Mobility
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#features"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    API Integration
                   </a>
                 </li>
               </ul>
@@ -58,22 +103,28 @@ const Footer = () => {
               <h4 className="font-medium">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Terms of Service
                   </a>
                 </li>
               </ul>
             </div>
-          </div>
-
+          </div>{" "}
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-sm text-muted-foreground text-center">
-              © {new Date().getFullYear()} Rezaul Arif. All rights reserved.
+              © {new Date().getFullYear()} Velora E-Mobility Solutions. All
+              rights reserved.
             </p>
           </div>
         </div>

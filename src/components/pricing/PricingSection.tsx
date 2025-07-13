@@ -16,7 +16,11 @@ const PricingTier = ({
   features: string[];
   isPopular?: boolean;
 }) => (
-  <CardSpotlight className={`h-full ${isPopular ? "border-primary" : "border-white/10"} border-2`}>
+  <CardSpotlight
+    className={`h-full ${
+      isPopular ? "border-primary" : "border-white/10"
+    } border-2`}
+  >
     <div className="relative h-full p-6 flex flex-col">
       {isPopular && (
         <span className="text-xs font-medium bg-primary/10 text-primary rounded-full px-3 py-1 w-fit mb-4">
@@ -37,9 +41,7 @@ const PricingTier = ({
           </li>
         ))}
       </ul>
-      <Button className="button-gradient w-full">
-        Start Trading
-      </Button>
+      <Button className="button-gradient w-full">Get Quote</Button>
     </div>
   </CardSpotlight>
 );
@@ -55,7 +57,7 @@ export const PricingSection = () => {
           className="text-5xl md:text-6xl font-normal mb-6"
         >
           Choose Your{" "}
-          <span className="text-gradient font-medium">Trading Plan</span>
+          <span className="text-gradient font-medium">Working Model</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -63,46 +65,50 @@ export const PricingSection = () => {
           transition={{ delay: 0.1, duration: 0.5 }}
           className="text-lg text-gray-400"
         >
-          Select the perfect trading plan with advanced features and competitive fees
+          Flexible engagement models designed to fit your company's
+          transportation management preferences
         </motion.p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <PricingTier
-          name="Basic Trader"
-          price="$0"
-          description="Perfect for beginners starting their crypto journey"
+          name="Fully Managed Model"
+          price="Custom"
+          description="Complete transportation management with flexible employee access controls"
           features={[
-            "Basic spot trading",
-            "Market & limit orders",
-            "Basic market analysis",
-            "Email support"
-          ]}
-        />
-        <PricingTier
-          name="Pro Trader"
-          price="$29"
-          description="Advanced features for serious traders"
-          features={[
-            "Advanced trading tools",
-            "Margin trading up to 10x",
-            "Advanced technical analysis",
-            "Priority support",
-            "API access"
+            "Global employee access control",
+            "Dashboard-based travel restrictions",
+            "Monthly billing based on usage",
+            "Real-time fleet management",
+            "Advanced analytics & reporting",
+            "24/7 priority support",
           ]}
           isPopular
         />
         <PricingTier
-          name="Institutional"
-          price="Custom"
-          description="Enterprise-grade solutions for institutions"
+          name="Travel Allowance Model"
+          price="Per Credit"
+          description="Fixed monthly allowances with automated credit management"
           features={[
-            "Custom trading solutions",
-            "Unlimited trading volume",
-            "OTC desk access",
+            "Monthly credit allocation per employee",
+            "Route-based fare deduction",
+            "Usage-based company billing",
+            "Employee self-service portal",
+            "Automated expense tracking",
+            "Cost optimization insights",
+          ]}
+        />
+        <PricingTier
+          name="Enterprise Custom"
+          price="Let's Talk"
+          description="Tailored solutions for large enterprises with specific requirements"
+          features={[
+            "Custom integration solutions",
+            "API-based HRIS/ERP integration",
+            "White-label mobile app",
             "Dedicated account manager",
-            "Custom API integration",
-            "24/7 priority support"
+            "SLA guarantees",
+            "Advanced security compliance",
           ]}
         />
       </div>

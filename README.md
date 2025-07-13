@@ -1,69 +1,190 @@
-# Welcome to your Lovable project
+# Velora - Smart E-Mobility Solutions
 
-## Project info
+## About Velora
 
-**URL**: https://lovable.dev/projects/92dc0c12-c831-4ed8-9ab7-0f875920f45d
+Velora is an innovative e-mobility startup that revolutionizes workplace transportation by providing intelligent, cost-effective, and sustainable mobility solutions for enterprises and their employees.
 
-## How can I edit this code?
+## What We Do
 
-There are several ways of editing your application.
+### 🚗 **Core Services**
 
-**Use Lovable**
+- **Cab/Shuttle Sharing**: Smart ride-sharing platform for company employees
+- **Company Portal**: Dedicated dashboard for transportation management
+- **Employee Mobile App**: User-friendly booking and journey management
+- **Smart Route Optimization**: AI-powered algorithms for efficient travel
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/92dc0c12-c831-4ed8-9ab7-0f875920f45d) and start prompting.
+### 🏢 **For Companies**
 
-Changes made via Lovable will be committed automatically to this repo.
+- Hassle-free employee transportation management
+- Cost optimization through fleet sharing and smart routing
+- Real-time analytics on utilization, costs, and carbon emissions
+- Automated billing and expense management
+- API integration with HRIS, ERP, and finance systems
+- BRSR/CSRD compliance with Scope-3 CO₂ tracking
 
-**Use your preferred IDE**
+### 👥 **For Employees**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Multiple transportation modes based on convenience
+- Flexible app-based booking system
+- Automated travel record maintenance
+- Cost savings through shared rides
+- Smart routing to avoid delays
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠 **Working Models**
 
-Follow these steps:
+### 1. **Fully Managed Model**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Complete company control over employee transportation
+- Global access controls through management dashboard
+- Monthly billing based on actual usage
+- Comprehensive analytics and reporting
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2. **Travel Allowance Model**
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Fixed monthly credits allocated per employee
+- Route-based fare deduction system
+- Company charged only for credits used
+- Employee self-service management
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 3. **Enterprise Custom**
+
+- Tailored solutions for large organizations
+- Custom API integrations
+- White-label mobile applications
+- Dedicated account management
+
+## 🌟 **Key Features**
+
+- **Smart Route Optimization**: AI-powered routing algorithms
+- **Real-time Analytics**: Cost, utilization, and sustainability metrics
+- **Green Mobility Tracking**: Carbon footprint monitoring and rewards
+- **Fleet Management**: Comprehensive vehicle and driver management
+- **API Integrations**: Seamless connection with enterprise systems
+- **Mobile App**: User-friendly employee application
+
+## 🚀 **Technology Stack**
+
+This website is built with modern web technologies:
+
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **UI Framework**: shadcn/ui with Radix UI primitives
+- **Styling**: Tailwind CSS with custom animations
+- **Animations**: Framer Motion
+- **State Management**: TanStack Query (React Query)
+- **Icons**: Lucide React
+
+## 🏗 **Project Structure**
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── features/       # Feature-specific components
+│   ├── pricing/        # Pricing section components
+│   ├── BenefitsSection.tsx
+│   ├── StatsSection.tsx
+│   ├── IntegrationSection.tsx
+│   └── ...
+├── config/             # Configuration files
+│   └── features.tsx    # Feature definitions
+├── pages/              # Page components
+│   └── Index.tsx       # Main landing page
+└── lib/                # Utility functions
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 **Customization Guide**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### **Content Updates**
 
-**Use GitHub Codespaces**
+1. **Hero Section**: Edit `src/pages/Index.tsx`
+2. **Features**: Modify `src/config/features.tsx`
+3. **Pricing Plans**: Update `src/components/pricing/PricingSection.tsx`
+4. **Testimonials**: Edit `src/components/TestimonialsSection.tsx`
+5. **Company Benefits**: Modify `src/components/BenefitsSection.tsx`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### **Branding Updates**
 
-## What technologies are used for this project?
+1. **Logo/Name**: Update `src/components/Navigation.tsx`
+2. **Colors**: Modify `src/index.css` CSS variables
+3. **Footer**: Edit `src/components/Footer.tsx`
 
-This project is built with .
+### **Adding New Sections**
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Create new component in `src/components/`
+2. Import and add to `src/pages/Index.tsx`
+3. Update navigation if needed
 
-## How can I deploy this project?
+## 🚀 **Development**
 
-Simply open [Lovable](https://lovable.dev/projects/92dc0c12-c831-4ed8-9ab7-0f875920f45d) and click on Share -> Publish.
+### **Prerequisites**
 
-## I want to use a custom domain - is that possible?
+- Node.js (v16 or higher)
+- npm or yarn
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### **Installation**
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd velora-website
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+### **Development Commands**
+
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run preview    # Preview production build
+npm run lint       # Run ESLint
+```
+
+## 📱 **Responsive Design**
+
+The website is fully responsive and optimized for:
+
+- 📱 Mobile devices (320px+)
+- 📱 Tablets (768px+)
+- 💻 Desktop (1024px+)
+- 🖥 Large screens (1280px+)
+
+## 🎯 **Performance Features**
+
+- ⚡ Fast loading with Vite
+- 🎨 Smooth animations with Framer Motion
+- 📦 Optimized bundle size
+- 🖼 Optimized images and assets
+- 🚀 Progressive enhancement
+
+## 🌱 **Sustainability Focus**
+
+Velora's platform emphasizes:
+
+- 🌍 Carbon footprint reduction
+- 📊 Scope-3 CO₂ tracking
+- 🏆 Green-Miles™ rewards system
+- 📈 Sustainability reporting
+- 🌱 BRSR/CSRD compliance
+
+## 📞 **Contact**
+
+For enterprise inquiries or demos:
+
+- 🌐 Website: [Visit our platform]
+- 📧 Email: contact@velora.com
+- 📱 Mobile: Request a demo through the website
+
+---
+
+**Built with ❤️ for the future of sustainable workplace mobility**

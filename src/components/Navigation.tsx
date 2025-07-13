@@ -17,39 +17,55 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === 'testimonials') {
-      const testimonialSection = document.querySelector('.animate-marquee');
+    if (sectionId === "testimonials") {
+      const testimonialSection = document.querySelector(".animate-marquee");
       if (testimonialSection) {
         const yOffset = -100; // Offset to account for the fixed header
-        const y = testimonialSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        const y =
+          testimonialSection.getBoundingClientRect().top +
+          window.pageYOffset +
+          yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
       }
-    } else if (sectionId === 'cta') {
-      const ctaSection = document.querySelector('.button-gradient');
+    } else if (sectionId === "cta") {
+      const ctaSection = document.querySelector(".button-gradient");
       if (ctaSection) {
         const yOffset = -100;
-        const y = ctaSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        const y =
+          ctaSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
       }
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
 
   const navItems = [
-    { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
-    { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
-    { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
+    {
+      name: "Solutions",
+      href: "#features",
+      onClick: () => scrollToSection("features"),
+    },
+    {
+      name: "Pricing",
+      href: "#pricing",
+      onClick: () => scrollToSection("pricing"),
+    },
+    {
+      name: "Success Stories",
+      href: "#testimonials",
+      onClick: () => scrollToSection("testimonials"),
+    },
   ];
 
   return (
     <header
       className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
-        isScrolled 
-          ? "h-14 bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-2xl" 
+        isScrolled
+          ? "h-14 bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-2xl"
           : "h-14 bg-[#1B1B1B] w-[95%] max-w-3xl"
       }`}
     >
@@ -57,7 +73,7 @@ const Navigation = () => {
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
             <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">CryptoTrade</span>
+            <span className="font-bold text-base">Velora</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -77,12 +93,12 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button 
-              onClick={() => scrollToSection('cta')}
+            <Button
+              onClick={() => scrollToSection("cta")}
               size="sm"
               className="button-gradient"
             >
-              Start Trading
+              Get Demo
             </Button>
           </div>
 
@@ -112,14 +128,14 @@ const Navigation = () => {
                       {item.name}
                     </a>
                   ))}
-                  <Button 
+                  <Button
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
+                      scrollToSection("cta");
                     }}
                     className="button-gradient mt-4"
                   >
-                    Start Trading
+                    Get Demo
                   </Button>
                 </div>
               </SheetContent>
