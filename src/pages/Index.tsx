@@ -38,7 +38,7 @@ const Index = () => {
             Smart E-Mobility Solutions for Enterprises
           </span>
         </motion.div>
-
+       {/* chnaged animation effect for main heading */}
         <div className="max-w-4xl relative z-10">
           <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
             <span className="text-muted-foreground">
