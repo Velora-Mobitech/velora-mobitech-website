@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Command, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { ThemeToggle } from "./ThemeToggle";
@@ -16,6 +16,10 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const scrollToSection = (sectionId: string) => {
     if (sectionId === "testimonials") {
@@ -73,8 +77,17 @@ const Navigation = () => {
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
-            <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">Velora</span>
+            <button 
+              onClick={scrollToTop}
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
+            >
+              <img 
+                src="/favicon.ico" 
+                alt="Velora Logo" 
+                className="w-5 h-5" 
+              />
+              <span className="font-bold text-base">Velora</span>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
@@ -89,7 +102,7 @@ const Navigation = () => {
                     item.onClick();
                   }
                 }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
+                className="text-sm font-semibold text-foreground hover:text-primary transition-all duration-300"
               >
                 {item.name}
               </a>
@@ -119,7 +132,7 @@ const Navigation = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-lg font-semibold text-foreground hover:text-primary transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
                         setIsMobileMenuOpen(false);

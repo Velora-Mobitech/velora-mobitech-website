@@ -49,7 +49,7 @@ const Index = () => {
               <TextGenerateEffect words="workplace mobility" delay={1.9} />
             </span>
           </h1>
-
+           <br />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
