@@ -6,7 +6,10 @@ interface CardSpotlightProps {
   className?: string;
 }
 
-export const CardSpotlight = ({ children, className = "" }: CardSpotlightProps) => {
+export const CardSpotlight = ({
+  children,
+  className = "",
+}: CardSpotlightProps) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -40,7 +43,7 @@ export const CardSpotlight = ({ children, className = "" }: CardSpotlightProps) 
       onMouseMove={handleMouseMove}
       onMouseEnter={handleFocus}
       onMouseLeave={handleBlur}
-      className={`relative overflow-hidden rounded-xl bg-gradient-to-b from-neutral-900 to-neutral-950 ${className}`}
+      className={`relative overflow-hidden rounded-xl glass ${className}`}
     >
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"

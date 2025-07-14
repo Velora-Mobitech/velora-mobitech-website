@@ -185,6 +185,27 @@ For enterprise inquiries or demos:
 - 📧 Email: contact@velora.com
 - 📱 Mobile: Request a demo through the website
 
+## Deployment
+
+This project is optimized for deployment on Vercel.
+
+### Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Velora-Mobitech/velora-mobitech-website)
+
+### Manual Deployment
+
+1. Build the project: `npm run build`
+2. Deploy to Vercel: `vercel --prod`
+
+### Environment Variables
+
+If you need environment variables, create a `.env.local` file:
+
+```
+VITE_API_URL=your_api_url_here
+```
+
 ---
 
 **Built with ❤️ for the future of sustainable workplace mobility**

@@ -17,9 +17,7 @@ const PricingTier = ({
   isPopular?: boolean;
 }) => (
   <CardSpotlight
-    className={`h-full ${
-      isPopular ? "border-primary" : "border-white/10"
-    } border-2`}
+    className={`h-full ${isPopular ? "border-primary" : "border-border"}`}
   >
     <div className="relative h-full p-6 flex flex-col">
       {isPopular && (
@@ -30,14 +28,16 @@ const PricingTier = ({
       <h3 className="text-xl font-medium mb-2">{name}</h3>
       <div className="mb-4">
         <span className="text-4xl font-bold">{price}</span>
-        {price !== "Custom" && <span className="text-gray-400">/month</span>}
+        {price !== "Custom" && (
+          <span className="text-muted-foreground">/month</span>
+        )}
       </div>
-      <p className="text-gray-400 mb-6">{description}</p>
+      <p className="text-muted-foreground mb-6">{description}</p>
       <ul className="space-y-3 mb-8 flex-grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-2">
             <Check className="w-5 h-5 text-primary" />
-            <span className="text-sm text-gray-300">{feature}</span>
+            <span className="text-sm text-muted-foreground">{feature}</span>
           </li>
         ))}
       </ul>
@@ -63,7 +63,7 @@ export const PricingSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="text-lg text-gray-400"
+          className="text-lg text-muted-foreground"
         >
           Flexible engagement models designed to fit your company's
           transportation management preferences

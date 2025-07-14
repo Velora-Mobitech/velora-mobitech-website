@@ -27,7 +27,7 @@ const IntegrationSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-black">
+    <section className="py-24 bg-background">
       <div className="container px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -41,7 +41,7 @@ const IntegrationSection = () => {
               Enterprise-Grade{" "}
               <span className="text-gradient font-medium">Integrations</span>
             </h2>
-            <p className="text-lg text-gray-400 mb-8">
+            <p className="text-lg text-muted-foreground mb-8">
               Velora's modular architecture seamlessly integrates with your
               existing enterprise systems, providing API-based connections that
               scale with your organization's needs.
@@ -55,14 +55,14 @@ const IntegrationSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-4 bg-white/5 rounded-lg border border-white/10"
+                  className="flex items-start gap-3 p-4 glass rounded-lg"
                 >
                   <div className="text-primary mt-1">{integration.icon}</div>
                   <div>
-                    <h3 className="font-medium text-white mb-1">
+                    <h3 className="font-medium text-foreground mb-1">
                       {integration.name}
                     </h3>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-muted-foreground">
                       {integration.description}
                     </p>
                   </div>
@@ -91,16 +91,18 @@ const IntegrationSection = () => {
                 <div className="flex items-center gap-3">
                   <Zap className="w-8 h-8 text-primary" />
                   <div>
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-xl font-semibold text-foreground">
                       Real-time API
                     </h3>
-                    <p className="text-gray-400">Live data synchronization</p>
+                    <p className="text-muted-foreground">
+                      Live data synchronization
+                    </p>
                   </div>
                 </div>
 
-                <div className="bg-black/40 rounded-lg p-4 font-mono text-sm">
+                <div className="glass rounded-lg p-4 font-mono text-sm">
                   <div className="text-primary">POST /api/v1/rides</div>
-                  <div className="text-gray-400 mt-2">
+                  <div className="text-muted-foreground mt-2">
                     {`{
   "employee_id": "EMP001",
   "pickup": "Office Complex A",
@@ -111,15 +113,17 @@ const IntegrationSection = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="bg-black/20 rounded-lg p-4">
+                  <div className="glass rounded-lg p-4">
                     <div className="text-2xl font-bold text-primary">99.9%</div>
-                    <div className="text-sm text-gray-400">Uptime</div>
+                    <div className="text-sm text-muted-foreground">Uptime</div>
                   </div>
-                  <div className="bg-black/20 rounded-lg p-4">
+                  <div className="glass rounded-lg p-4">
                     <div className="text-2xl font-bold text-primary">
                       &lt; 100ms
                     </div>
-                    <div className="text-sm text-gray-400">Response Time</div>
+                    <div className="text-sm text-muted-foreground">
+                      Response Time
+                    </div>
                   </div>
                 </div>
               </div>

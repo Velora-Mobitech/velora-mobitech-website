@@ -30,7 +30,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section className="py-20 bg-background">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ const StatsSection = () => {
             Transforming Mobility{" "}
             <span className="text-gradient font-medium">Across Industries</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Real impact delivered to companies and employees worldwide
           </p>
         </motion.div>
@@ -58,15 +58,17 @@ const StatsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-xl p-8 hover:border-primary/20 transition-all duration-300">
+              <div className="glass rounded-xl p-8 hover:border-primary/20 transition-all duration-300">
                 <div className="flex justify-center mb-4">{stat.icon}</div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                   {stat.number}
                 </h3>
                 <p className="text-lg font-medium text-primary mb-2">
                   {stat.label}
                 </p>
-                <p className="text-sm text-gray-400">{stat.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {stat.description}
+                </p>
               </div>
             </motion.div>
           ))}

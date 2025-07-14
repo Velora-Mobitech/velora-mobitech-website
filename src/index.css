@@ -7,6 +7,7 @@
 
 @layer base {
   :root {
+    /* Dark theme (default) */
     --background: 0 0% 4%;
     --foreground: 0 0% 100%;
     --card: 0 0% 4%;
@@ -28,6 +29,29 @@
     --ring: 142 84% 58%;
     --radius: 0.75rem;
   }
+
+  /* Light theme */
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 142 84% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 142 84% 50%;
+  }
 }
 
 @layer base {
@@ -37,14 +61,30 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Smooth theme transitions */
+  *, *::before, *::after {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 }
 
 .glass {
-  @apply bg-white/5 backdrop-blur-lg;
+  @apply backdrop-blur-lg;
   border: 1px solid transparent;
   background-clip: padding-box;
   position: relative;
+}
+
+/* Dark mode glass */
+:root .glass {
+  @apply bg-white/5;
+}
+
+/* Light mode glass */
+.light .glass {
+  @apply bg-black/5;
 }
 
 .glass::before {
@@ -61,8 +101,23 @@
   pointer-events: none;
 }
 
+/* Light mode glass border */
+.light .glass::before {
+  background: linear-gradient(225deg, rgba(0,0,0,0.2), rgba(0,0,0,0.05));
+}
+
 .glass-hover {
-  @apply transition-all duration-300 hover:bg-white/10;
+  @apply transition-all duration-300;
+}
+
+/* Dark mode glass hover */
+:root .glass-hover:hover {
+  @apply bg-white/10;
+}
+
+/* Light mode glass hover */
+.light .glass-hover:hover {
+  @apply bg-black/10;
 }
 
 .text-gradient {

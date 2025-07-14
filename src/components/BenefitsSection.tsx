@@ -70,7 +70,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-black">
+    <section className="py-24 bg-background">
       <div className="container px-4">
         {/* Company Benefits */}
         <motion.div
@@ -85,7 +85,7 @@ const BenefitsSection = () => {
               What's in it for{" "}
               <span className="text-gradient font-medium">Companies?</span>
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Transform your organization's transportation management with
               comprehensive solutions
             </p>
@@ -100,13 +100,15 @@ const BenefitsSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="bg-black/40 backdrop-blur-xl border-white/10 hover:border-primary/20 transition-all duration-300 h-full">
+                <Card className="glass hover:border-primary/20 transition-all duration-300 h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">{benefit.icon}</div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">
+                    <h3 className="text-xl font-semibold mb-2 text-foreground">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-400">{benefit.description}</p>
+                    <p className="text-muted-foreground">
+                      {benefit.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -126,7 +128,7 @@ const BenefitsSection = () => {
               What's in it for{" "}
               <span className="text-gradient font-medium">Employees?</span>
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Empower your workforce with convenient, flexible, and intelligent
               transportation options
             </p>
@@ -141,13 +143,15 @@ const BenefitsSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="bg-black/40 backdrop-blur-xl border-white/10 hover:border-primary/20 transition-all duration-300 h-full">
+                <Card className="glass hover:border-primary/20 transition-all duration-300 h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">{benefit.icon}</div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">
+                    <h3 className="text-xl font-semibold mb-2 text-foreground">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-400">{benefit.description}</p>
+                    <p className="text-muted-foreground">
+                      {benefit.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>

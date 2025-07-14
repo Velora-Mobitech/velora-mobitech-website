@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Deployment
+.vercel
+.netlify
+
+# Environment variables
+.env.local
+.env.production.local

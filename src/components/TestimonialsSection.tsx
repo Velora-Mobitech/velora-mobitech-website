@@ -51,7 +51,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 overflow-hidden bg-black">
+    <section className="py-20 overflow-hidden bg-background">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ const TestimonialsSection = () => {
               {testimonials.map((testimonial, index) => (
                 <Card
                   key={`${index}-1`}
-                  className="w-[400px] shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8"
+                  className="w-[400px] shrink-0 glass hover:border-primary/20 transition-all duration-300 p-8"
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <Avatar className="h-12 w-12">
@@ -83,15 +83,15 @@ const TestimonialsSection = () => {
                       <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-medium text-white/90">
+                      <h4 className="font-medium text-foreground">
                         {testimonial.name}
                       </h4>
-                      <p className="text-sm text-white/60">
+                      <p className="text-sm text-muted-foreground">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-foreground/80 leading-relaxed">
                     {testimonial.content}
                   </p>
                 </Card>
@@ -101,7 +101,7 @@ const TestimonialsSection = () => {
               {testimonials.map((testimonial, index) => (
                 <Card
                   key={`${index}-2`}
-                  className="w-[400px] shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8"
+                  className="w-[400px] shrink-0 glass hover:border-primary/20 transition-all duration-300 p-8"
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <Avatar className="h-12 w-12">
@@ -109,15 +109,15 @@ const TestimonialsSection = () => {
                       <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-medium text-white/90">
+                      <h4 className="font-medium text-foreground">
                         {testimonial.name}
                       </h4>
-                      <p className="text-sm text-white/60">
+                      <p className="text-sm text-muted-foreground">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-foreground/80 leading-relaxed">
                     {testimonial.content}
                   </p>
                 </Card>

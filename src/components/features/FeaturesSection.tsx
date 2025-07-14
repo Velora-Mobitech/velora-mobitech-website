@@ -15,7 +15,7 @@ export const FeaturesSection = () => {
             Solutions & Features
           </span>
         </h2>
-        <p className="text-lg md:text-xl text-gray-400 text-left">
+        <p className="text-lg md:text-xl text-muted-foreground text-left">
           Experience comprehensive e-mobility solutions designed for modern
           enterprises. From intelligent route optimization to sustainability
           tracking, we've got your transportation needs covered.

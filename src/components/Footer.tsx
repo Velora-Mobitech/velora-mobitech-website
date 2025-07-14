@@ -121,7 +121,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>{" "}
-          <div className="mt-8 pt-8 border-t border-white/10">
+          <div className="mt-8 pt-8 border-t border-border">
             <p className="text-sm text-muted-foreground text-center">
               © {new Date().getFullYear()} Velora E-Mobility Solutions. All
               rights reserved.
