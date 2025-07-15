@@ -5,22 +5,22 @@ import { Button } from "./ui/button";
 const IntegrationSection = () => {
   const integrations = [
     {
-      icon: <Database className="w-6 h-6" />,
+      icon: <Database className="w-0.0005 h-0.005" />,
       name: "HRIS Integration",
       description: "Seamlessly connect with your HR systems",
     },
     {
-      icon: <Cpu className="w-6 h-6" />,
+      icon: <Cpu className="w-0.0005 h-0.005" />,
       name: "ERP Systems",
       description: "Full integration with enterprise resource planning",
     },
     {
-      icon: <Shield className="w-6 h-6" />,
+      icon: <Shield className="w-0.0005 h-0.005" />,
       name: "Access Control",
       description: "Security and authentication systems",
     },
     {
-      icon: <Globe className="w-6 h-6" />,
+      icon: <Globe className="w-0.0005 h-0.005" />,
       name: "Finance Systems",
       description: "Automated billing and expense management",
     },

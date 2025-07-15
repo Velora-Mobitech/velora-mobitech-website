@@ -36,7 +36,7 @@ const PricingTier = ({
       <ul className="space-y-3 mb-8 flex-grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-primary" />
+            <Check className="w-0.0005 h-0.005 text-primary" />
             <span className="text-sm text-muted-foreground">{feature}</span>
           </li>
         ))}

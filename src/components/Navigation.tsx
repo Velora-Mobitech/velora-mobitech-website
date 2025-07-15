@@ -81,7 +81,11 @@ const Navigation = () => {
               onClick={scrollToTop}
               className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
             >
-              <img src="/favicon.ico" alt="Velora Logo" className="w-5 h-5" />
+              <img
+                src="/favicon.ico"
+                alt="Velora Logo"
+                className="w-0.0005 h-0.005"
+              />
               <span className="font-bold text-base">Velora</span>
             </button>
           </div>
