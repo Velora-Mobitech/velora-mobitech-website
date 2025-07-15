@@ -8,16 +8,18 @@ interface FeatureTabProps {
   isActive: boolean;
 }
 
-export const FeatureTab = ({ icon, title, description, isActive }: FeatureTabProps) => {
+export const FeatureTab = ({
+  icon,
+  title,
+  description,
+  isActive,
+}: FeatureTabProps) => {
   return (
-    <div 
+    <div
       className={`
         w-full flex items-start gap-4 p-6 rounded-xl
         transition-all duration-300 relative min-h-[120px]
-        ${isActive 
-          ? 'glass shadow-lg shadow-primary/10' 
-          : 'hover:glass-hover'
-        }
+        ${isActive ? "glass shadow-lg shadow-primary/10" : "hover:glass-hover"}
       `}
     >
       {isActive && (
@@ -30,11 +32,19 @@ export const FeatureTab = ({ icon, title, description, isActive }: FeatureTabPro
         />
       )}
       <div className="flex items-start gap-4 min-w-0 w-full">
-        <div className={`flex-shrink-0 mt-1 ${isActive ? 'text-primary' : 'text-muted-foreground'}`}>
+        <div
+          className={`flex-shrink-0 mt-1 ${
+            isActive ? "text-primary" : "text-muted-foreground"
+          }`}
+        >
           {icon}
         </div>
         <div className="text-left min-w-0 flex-1">
-          <h3 className={`font-semibold text-base leading-tight mb-2 ${isActive ? 'text-primary' : ''}`}>
+          <h3
+            className={`font-semibold text-base leading-tight mb-2 ${
+              isActive ? "text-primary" : ""
+            }`}
+          >
             {title}
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed whitespace-normal">

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Command } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
@@ -34,7 +34,11 @@ const Index = () => {
           className="inline-block mb-4 px-4 py-1.5 rounded-full glass"
         >
           <span className="text-sm font-medium">
-            <Command className="w-4 h-4 inline-block mr-2" />
+            <img 
+              src="/favicon.ico" 
+              alt="Velora Icon" 
+              className="w-4 h-4 inline-block mr-2" 
+            />
             Smart E-Mobility Solutions for Enterprises
           </span>
         </motion.div>
