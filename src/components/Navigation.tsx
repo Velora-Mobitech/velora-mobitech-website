@@ -77,15 +77,11 @@ const Navigation = () => {
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
-            <button 
+            <button
               onClick={scrollToTop}
               className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
             >
-              <img 
-                src="/favicon.ico" 
-                alt="Velora Logo" 
-                className="w-5 h-5" 
-              />
+              <img src="/favicon.ico" alt="Velora Logo" className="w-5 h-5" />
               <span className="font-bold text-base">Velora</span>
             </button>
           </div>
