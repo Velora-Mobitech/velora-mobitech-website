@@ -30,9 +30,7 @@ const PricingTier = ({
   >
     <div
       className={`absolute inset-0 rounded-xl transition-all duration-300 pointer-events-none z-20 ${
-        isSelected 
-          ? "border-2 border-primary shadow-lg shadow-primary/30" 
-          : ""
+        isSelected ? "border-2 border-primary shadow-lg shadow-primary/30" : ""
       }`}
     />
     <CardSpotlight
@@ -45,13 +43,9 @@ const PricingTier = ({
       }`}
     >
       <div className="relative h-full p-6 flex flex-col">
-        {(isPopular || isSelected) && (
-          <span className={`text-xs font-medium rounded-full px-3 py-1 w-fit mb-4 transition-all duration-300 ${
-            isSelected 
-              ? "bg-primary text-primary-foreground" 
-              : "bg-primary/10 text-primary"
-          }`}>
-            {isSelected ? "Selected" : "Most Popular"}
+        {isPopular && (
+          <span className="text-xs font-medium bg-primary/10 text-primary rounded-full px-3 py-1 w-fit mb-4">
+            Most Popular
           </span>
         )}
         <h3 className="text-xl font-medium mb-2">{name}</h3>
@@ -70,14 +64,14 @@ const PricingTier = ({
             </li>
           ))}
         </ul>
-        <Button 
+        <Button
           className={`w-full transition-all duration-300 ${
-            isSelected 
-              ? "button-gradient shadow-lg shadow-primary/30" 
+            isSelected
+              ? "button-gradient shadow-lg shadow-primary/30"
               : "button-gradient"
           }`}
         >
-          {isSelected ? "Selected - Get Quote" : "Get Quote"}
+          Get Quote
         </Button>
       </div>
     </CardSpotlight>
@@ -85,23 +79,12 @@ const PricingTier = ({
 );
 
 export const PricingSection = () => {
-  const [selectedCard, setSelectedCard] = useState<string>("Fully Managed Model");
+  const [selectedCard, setSelectedCard] = useState<string>(
+    "Fully Managed Model"
+  );
 
   const pricingData = [
-    {
-      name: "Fully Managed Model",
-      price: "Custom",
-      description: "Complete transportation management with flexible employee access controls",
-      features: [
-        "Global employee access control",
-        "Dashboard-based travel restrictions",
-        "Monthly billing based on usage",
-        "Real-time fleet management",
-        "Advanced analytics & reporting",
-        "24/7 priority support",
-      ],
-      isPopular: true,
-    },
+   
     {
       name: "Travel Allowance Model",
       price: "Per Credit",
@@ -116,10 +99,26 @@ export const PricingSection = () => {
       ],
       isPopular: false,
     },
+     {
+      name: "Fully Managed Model",
+      price: "Custom",
+      description:
+        "Complete transportation management with flexible employee access controls",
+      features: [
+        "Global employee access control",
+        "Dashboard-based travel restrictions",
+        "Monthly billing based on usage",
+        "Real-time fleet management",
+        "Advanced analytics & reporting",
+        "24/7 priority support",
+      ],
+      isPopular: true,
+    },
     {
       name: "Enterprise Custom",
       price: "Let's Talk",
-      description: "Tailored solutions for large enterprises with specific requirements",
+      description:
+        "Tailored solutions for large enterprises with specific requirements",
       features: [
         "Custom integration solutions",
         "API-based HRIS/ERP integration",
@@ -153,18 +152,6 @@ export const PricingSection = () => {
           Flexible engagement models designed to fit your company's
           transportation management preferences
         </motion.p>
-        {selectedCard && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.3 }}
-            className="mt-4 p-3 glass rounded-lg"
-          >
-            <p className="text-sm text-foreground">
-              <span className="font-medium text-primary">Selected:</span> {selectedCard}
-            </p>
-          </motion.div>
-        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
