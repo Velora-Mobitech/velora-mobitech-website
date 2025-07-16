@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,44 +10,128 @@ const PricingTier = ({
   description,
   features,
   isPopular,
+  isSelected,
+  onSelect,
 }: {
   name: string;
   price: string;
   description: string;
   features: string[];
   isPopular?: boolean;
+  isSelected: boolean;
+  onSelect: () => void;
 }) => (
-  <CardSpotlight
-    className={`h-full ${isPopular ? "border-primary" : "border-border"}`}
+  <motion.div
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    onClick={onSelect}
+    className={`cursor-pointer relative ${isSelected ? "z-10" : ""}`}
   >
-    <div className="relative h-full p-6 flex flex-col">
-      {isPopular && (
-        <span className="text-xs font-medium bg-primary/10 text-primary rounded-full px-3 py-1 w-fit mb-4">
-          Most Popular
-        </span>
-      )}
-      <h3 className="text-xl font-medium mb-2">{name}</h3>
-      <div className="mb-4">
-        <span className="text-4xl font-bold">{price}</span>
-        {price !== "Custom" && (
-          <span className="text-muted-foreground">/month</span>
+    <div
+      className={`absolute inset-0 rounded-xl transition-all duration-300 pointer-events-none z-20 ${
+        isSelected 
+          ? "border-2 border-primary shadow-lg shadow-primary/30" 
+          : ""
+      }`}
+    />
+    <CardSpotlight
+      className={`h-full transition-all duration-300 ${
+        isSelected
+          ? "border-primary"
+          : isPopular
+          ? "border-primary"
+          : "border-border hover:border-primary/50"
+      }`}
+    >
+      <div className="relative h-full p-6 flex flex-col">
+        {(isPopular || isSelected) && (
+          <span className={`text-xs font-medium rounded-full px-3 py-1 w-fit mb-4 transition-all duration-300 ${
+            isSelected 
+              ? "bg-primary text-primary-foreground" 
+              : "bg-primary/10 text-primary"
+          }`}>
+            {isSelected ? "Selected" : "Most Popular"}
+          </span>
         )}
+        <h3 className="text-xl font-medium mb-2">{name}</h3>
+        <div className="mb-4">
+          <span className="text-4xl font-bold">{price}</span>
+          {price !== "Custom" && price !== "Let's Talk" && (
+            <span className="text-muted-foreground">/month</span>
+          )}
+        </div>
+        <p className="text-muted-foreground mb-6">{description}</p>
+        <ul className="space-y-3 mb-8 flex-grow">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-primary" />
+              <span className="text-sm text-muted-foreground">{feature}</span>
+            </li>
+          ))}
+        </ul>
+        <Button 
+          className={`w-full transition-all duration-300 ${
+            isSelected 
+              ? "button-gradient shadow-lg shadow-primary/30" 
+              : "button-gradient"
+          }`}
+        >
+          {isSelected ? "Selected - Get Quote" : "Get Quote"}
+        </Button>
       </div>
-      <p className="text-muted-foreground mb-6">{description}</p>
-      <ul className="space-y-3 mb-8 flex-grow">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-2">
-            <Check className="w-0.0005 h-0.005 text-primary" />
-            <span className="text-sm text-muted-foreground">{feature}</span>
-          </li>
-        ))}
-      </ul>
-      <Button className="button-gradient w-full">Get Quote</Button>
-    </div>
-  </CardSpotlight>
+    </CardSpotlight>
+  </motion.div>
 );
 
 export const PricingSection = () => {
+  const [selectedCard, setSelectedCard] = useState<string>("Fully Managed Model");
+
+  const pricingData = [
+    {
+      name: "Fully Managed Model",
+      price: "Custom",
+      description: "Complete transportation management with flexible employee access controls",
+      features: [
+        "Global employee access control",
+        "Dashboard-based travel restrictions",
+        "Monthly billing based on usage",
+        "Real-time fleet management",
+        "Advanced analytics & reporting",
+        "24/7 priority support",
+      ],
+      isPopular: true,
+    },
+    {
+      name: "Travel Allowance Model",
+      price: "Per Credit",
+      description: "Fixed monthly allowances with automated credit management",
+      features: [
+        "Monthly credit allocation per employee",
+        "Route-based fare deduction",
+        "Usage-based company billing",
+        "Employee self-service portal",
+        "Automated expense tracking",
+        "Cost optimization insights",
+      ],
+      isPopular: false,
+    },
+    {
+      name: "Enterprise Custom",
+      price: "Let's Talk",
+      description: "Tailored solutions for large enterprises with specific requirements",
+      features: [
+        "Custom integration solutions",
+        "API-based HRIS/ERP integration",
+        "White-label mobile app",
+        "Dedicated account manager",
+        "SLA guarantees",
+        "Advanced security compliance",
+      ],
+      isPopular: false,
+    },
+  ];
+
   return (
     <section className="container px-4 py-24">
       <div className="max-w-2xl mx-auto text-center mb-12">
@@ -68,49 +153,33 @@ export const PricingSection = () => {
           Flexible engagement models designed to fit your company's
           transportation management preferences
         </motion.p>
+        {selectedCard && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
+            className="mt-4 p-3 glass rounded-lg"
+          >
+            <p className="text-sm text-foreground">
+              <span className="font-medium text-primary">Selected:</span> {selectedCard}
+            </p>
+          </motion.div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <PricingTier
-          name="Fully Managed Model"
-          price="Custom"
-          description="Complete transportation management with flexible employee access controls"
-          features={[
-            "Global employee access control",
-            "Dashboard-based travel restrictions",
-            "Monthly billing based on usage",
-            "Real-time fleet management",
-            "Advanced analytics & reporting",
-            "24/7 priority support",
-          ]}
-          isPopular
-        />
-        <PricingTier
-          name="Travel Allowance Model"
-          price="Per Credit"
-          description="Fixed monthly allowances with automated credit management"
-          features={[
-            "Monthly credit allocation per employee",
-            "Route-based fare deduction",
-            "Usage-based company billing",
-            "Employee self-service portal",
-            "Automated expense tracking",
-            "Cost optimization insights",
-          ]}
-        />
-        <PricingTier
-          name="Enterprise Custom"
-          price="Let's Talk"
-          description="Tailored solutions for large enterprises with specific requirements"
-          features={[
-            "Custom integration solutions",
-            "API-based HRIS/ERP integration",
-            "White-label mobile app",
-            "Dedicated account manager",
-            "SLA guarantees",
-            "Advanced security compliance",
-          ]}
-        />
+        {pricingData.map((tier) => (
+          <PricingTier
+            key={tier.name}
+            name={tier.name}
+            price={tier.price}
+            description={tier.description}
+            features={tier.features}
+            isPopular={tier.isPopular}
+            isSelected={selectedCard === tier.name}
+            onSelect={() => setSelectedCard(tier.name)}
+          />
+        ))}
       </div>
     </section>
   );
