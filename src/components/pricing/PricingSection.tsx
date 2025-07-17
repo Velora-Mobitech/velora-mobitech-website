@@ -84,7 +84,6 @@ export const PricingSection = () => {
   );
 
   const pricingData = [
-   
     {
       name: "Travel Allowance Model",
       price: "Per Credit",
@@ -99,7 +98,7 @@ export const PricingSection = () => {
       ],
       isPopular: false,
     },
-     {
+    {
       name: "Fully Managed Model",
       price: "Custom",
       description:

@@ -3,10 +3,13 @@ import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { ThemeToggle } from "./ThemeToggle";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,10 +21,24 @@ const Navigation = () => {
   }, []);
 
   const scrollToTop = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      return;
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      return;
+    }
     if (sectionId === "testimonials") {
       const testimonialSection = document.querySelector(".animate-marquee");
       if (testimonialSection) {
@@ -109,7 +126,7 @@ const Navigation = () => {
             ))}
             <ThemeToggle />
             <Button
-              onClick={() => scrollToSection("cta")}
+              onClick={() => navigate("/get-demo")}
               size="sm"
               className="button-gradient"
             >
@@ -147,7 +164,7 @@ const Navigation = () => {
                   <Button
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection("cta");
+                      navigate("/get-demo");
                     }}
                     className="button-gradient mt-4"
                   >

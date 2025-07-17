@@ -11,8 +11,11 @@ import StatsSection from "@/components/StatsSection";
 import IntegrationSection from "@/components/IntegrationSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -34,15 +37,15 @@ const Index = () => {
           className="inline-block mb-4 px-4 py-1.5 rounded-full glass"
         >
           <span className="text-sm font-medium">
-            <img 
-              src="/favicon.ico" 
-              alt="Velora Icon" 
-              className="w-4 h-4 inline-block mr-2" 
+            <img
+              src="/favicon.ico"
+              alt="Velora Icon"
+              className="w-4 h-4 inline-block mr-2"
             />
             Smart E-Mobility Solutions for Enterprises
           </span>
         </motion.div>
-       {/* chnaged animation effect for main heading */}
+        {/* chnaged animation effect for main heading */}
         <div className="max-w-4xl relative z-10">
           <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
             <span className="text-muted-foreground">
@@ -53,7 +56,7 @@ const Index = () => {
               <TextGenerateEffect words="workplace mobility" delay={1.9} />
             </span>
           </h1>
-           <br />
+          <br />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,10 +77,19 @@ const Index = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
-            <Button size="lg" className="button-gradient">
+            <Button
+              size="lg"
+              className="button-gradient"
+              onClick={() => navigate("/get-demo")}
+            >
               Get Started
             </Button>
-            <Button size="lg" variant="link" className="text-foreground">
+            <Button
+              size="lg"
+              variant="link"
+              className="text-foreground"
+              onClick={() => navigate("/get-demo")}
+            >
               Request Demo <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </motion.div>
@@ -154,7 +166,11 @@ const Index = () => {
             Join leading companies who have revolutionized their employee
             transportation with Velora's intelligent e-mobility solutions.
           </p>
-          <Button size="lg" className="button-gradient">
+          <Button
+            size="lg"
+            className="button-gradient"
+            onClick={() => navigate("/get-demo")}
+          >
             Get Started
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
