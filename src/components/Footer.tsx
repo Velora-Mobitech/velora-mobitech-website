@@ -1,7 +1,9 @@
 import { Github, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="w-full py-12 mt-20">
       <div className="container px-4">
@@ -117,6 +119,14 @@ const Footer = () => {
                   >
                     Terms of Service
                   </a>
+                </li>
+                <li>
+                  <button
+                    onClick={() => navigate("/analytics")}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
+                  >
+                    Website Analytics
+                  </button>
                 </li>
               </ul>
             </div>

@@ -387,7 +387,7 @@ const GetDemo = () => {
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-4 h-4 text-primary" />
                   <span className="text-sm">
-                    krishna@veloramobitech.systems
+                    kv@veloramobitech.systems
                   </span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
@@ -422,7 +422,7 @@ const GetDemo = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span className="text-sm">vijaya@veloramobitech.systems</span>
+                  <span className="text-sm">tvb@veloramobitech.systems</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Phone className="w-4 h-4 text-primary" />
@@ -456,7 +456,7 @@ const GetDemo = () => {
                 <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Email Us</h3>
                 <p className="text-muted-foreground">
-                  team@veloramobitech.systems
+                  contact@veloramobitech.systems
                 </p>
               </div>
               <div className="text-center">
