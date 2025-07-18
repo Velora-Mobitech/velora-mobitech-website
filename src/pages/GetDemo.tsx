@@ -341,6 +341,99 @@ const GetDemo = () => {
         </div>
       </motion.section>
 
+      {/* Meet Our Team Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+        className="container px-4 py-20"
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Meet Our <span className="text-gradient">Expert Team</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our experienced professionals are dedicated to revolutionizing
+              your company's transportation with innovative e-mobility
+              solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Team Member 1 - Krishna Vamsi */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="glass rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300"
+            >
+              <div className="relative mb-6">
+                <img
+                  src="/lovable-uploads/krishna-vamsi.jpg"
+                  alt="Krishna Vamsi Veerisetti"
+                  className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-primary/20"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">
+                Krishna Vamsi Veerisetti
+              </h3>
+              <p className="text-primary font-medium mb-3">CEO & Founder</p>
+              <p className="text-muted-foreground text-sm mb-4">
+                Leading innovation in smart e-mobility solutions and enterprise
+                transportation
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center justify-center gap-2">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <span className="text-sm">
+                    krishna@veloramobitech.systems
+                  </span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="text-sm">+91 8688505081</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Team Member 2 - Vijaya Balaji */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="glass rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300"
+            >
+              <div className="relative mb-6">
+                <img
+                  src="/lovable-uploads/vijaya-balaji.jpg"
+                  alt="Vijaya Balaji Tatta"
+                  className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-primary/20"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">
+                Vijaya Balaji Tatta
+              </h3>
+              <p className="text-primary font-medium mb-3">CTO & Co-Founder</p>
+              <p className="text-muted-foreground text-sm mb-4">
+                Expert in AI/ML technologies and smart transportation system
+                architecture
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center justify-center gap-2">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <span className="text-sm">vijaya@veloramobitech.systems</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="text-sm">+91 9347767825</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Contact Us Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -362,7 +455,9 @@ const GetDemo = () => {
               <div className="text-center">
                 <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Email Us</h3>
-                <p className="text-muted-foreground">team@veloramobitech.systems</p>
+                <p className="text-muted-foreground">
+                  team@veloramobitech.systems
+                </p>
               </div>
               <div className="text-center">
                 <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
