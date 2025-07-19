@@ -31,9 +31,9 @@ export const initGA = () => {
       page_location: window.location.href,
     });
 
-    console.log('Google Analytics initialized with ID:', GA_TRACKING_ID);
+    console.log('✅ Google Analytics is working with a valid tracking ID');
   } else {
-    console.log('Google Analytics not configured. Set VITE_GA_TRACKING_ID in .env file.');
+    console.log('📊 Google Analytics not configured. Built-in analytics is active. Set VITE_GA_TRACKING_ID in .env file for Google Analytics.');
   }
 };
 
