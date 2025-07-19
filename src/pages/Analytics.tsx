@@ -58,19 +58,23 @@ const Analytics = () => {
       };
 
       // Store in localStorage for cross-tab tracking
-      const existingVisitors = JSON.parse(localStorage.getItem('live_visitors') || '[]');
-      const updatedVisitors = existingVisitors.filter((v: LiveVisitor) => 
-        Date.now() - v.lastSeen < 300000 // Remove visitors inactive for 5+ minutes
+      const existingVisitors = JSON.parse(
+        localStorage.getItem("live_visitors") || "[]"
+      );
+      const updatedVisitors = existingVisitors.filter(
+        (v: LiveVisitor) => Date.now() - v.lastSeen < 300000 // Remove visitors inactive for 5+ minutes
       );
 
-      const visitorIndex = updatedVisitors.findIndex((v: LiveVisitor) => v.id === visitorData.id);
+      const visitorIndex = updatedVisitors.findIndex(
+        (v: LiveVisitor) => v.id === visitorData.id
+      );
       if (visitorIndex >= 0) {
         updatedVisitors[visitorIndex] = visitorData;
       } else {
         updatedVisitors.push(visitorData);
       }
 
-      localStorage.setItem('live_visitors', JSON.stringify(updatedVisitors));
+      localStorage.setItem("live_visitors", JSON.stringify(updatedVisitors));
       setLiveVisitors(updatedVisitors);
     };
 
@@ -86,11 +90,13 @@ const Analytics = () => {
       try {
         const currentStats = analytics.getStats();
         const recentActivity = analytics.getRecentActivity();
-        const liveVisitorsData = JSON.parse(localStorage.getItem('live_visitors') || '[]');
-        
+        const liveVisitorsData = JSON.parse(
+          localStorage.getItem("live_visitors") || "[]"
+        );
+
         // Filter out visitors inactive for more than 5 minutes
-        const activeVisitors = liveVisitorsData.filter((v: LiveVisitor) => 
-          Date.now() - v.lastSeen < 300000
+        const activeVisitors = liveVisitorsData.filter(
+          (v: LiveVisitor) => Date.now() - v.lastSeen < 300000
         );
 
         setStats({
@@ -102,7 +108,7 @@ const Analytics = () => {
         setLastUpdate(new Date());
         setIsLoading(false);
       } catch (error) {
-        console.error('Error loading analytics:', error);
+        console.error("Error loading analytics:", error);
         setIsLoading(false);
       }
     };
@@ -110,7 +116,7 @@ const Analytics = () => {
     loadStats();
     // Refresh every 10 seconds for live data
     const interval = setInterval(loadStats, 10000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -120,11 +126,15 @@ const Analytics = () => {
       liveVisitors,
       exportDate: new Date().toISOString(),
     };
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json",
+    });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `velora-analytics-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `velora-analytics-${
+      new Date().toISOString().split("T")[0]
+    }.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -132,9 +142,13 @@ const Analytics = () => {
   };
 
   const handleClearData = () => {
-    if (confirm('Are you sure you want to clear all analytics data? This cannot be undone.')) {
+    if (
+      confirm(
+        "Are you sure you want to clear all analytics data? This cannot be undone."
+      )
+    ) {
       analytics.clearData();
-      localStorage.removeItem('live_visitors');
+      localStorage.removeItem("live_visitors");
       setStats(analytics.getStats());
       setLiveVisitors([]);
     }
@@ -149,9 +163,9 @@ const Analytics = () => {
   };
 
   const getDeviceType = (userAgent: string) => {
-    if (/Mobile|Android|iPhone|iPad/.test(userAgent)) return 'Mobile';
-    if (/Tablet/.test(userAgent)) return 'Tablet';
-    return 'Desktop';
+    if (/Mobile|Android|iPhone|iPad/.test(userAgent)) return "Mobile";
+    if (/Tablet/.test(userAgent)) return "Tablet";
+    return "Desktop";
   };
 
   if (isLoading) {
@@ -186,11 +200,15 @@ const Analytics = () => {
                 Website <span className="text-gradient">Analytics</span>
               </h1>
               <p className="text-lg text-muted-foreground">
-                Real-time insights into your website performance and visitor behavior
+                Real-time insights into your website performance and visitor
+                behavior
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <Badge variant="outline" className="bg-green-500/10 text-green-600 border-green-500/20">
+              <Badge
+                variant="outline"
+                className="bg-green-500/10 text-green-600 border-green-500/20"
+              >
                 <Activity className="w-3 h-3 mr-1" />
                 Live
               </Badge>
@@ -205,15 +223,18 @@ const Analytics = () => {
       {/* Main Analytics Dashboard */}
       <section className="container px-4 pb-20">
         <div className="max-w-6xl mx-auto space-y-8">
-          
           {/* Live Visitors and Key Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="bg-gradient-to-br from-green-500/10 to-green-600/5 border-green-500/20">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Live Visitors</p>
-                    <p className="text-3xl font-bold text-green-600">{stats?.currentVisitors || 0}</p>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      Live Visitors
+                    </p>
+                    <p className="text-3xl font-bold text-green-600">
+                      {stats?.currentVisitors || 0}
+                    </p>
                   </div>
                   <div className="relative">
                     <Users className="w-8 h-8 text-green-500" />
@@ -227,8 +248,12 @@ const Analytics = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Total Views</p>
-                    <p className="text-3xl font-bold">{stats?.totalEvents || 0}</p>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      Total Views
+                    </p>
+                    <p className="text-3xl font-bold">
+                      {stats?.totalEvents || 0}
+                    </p>
                   </div>
                   <Eye className="w-8 h-8 text-blue-500" />
                 </div>
@@ -239,8 +264,12 @@ const Analytics = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Unique Users</p>
-                    <p className="text-3xl font-bold">{stats?.uniqueUsers || 0}</p>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      Unique Users
+                    </p>
+                    <p className="text-3xl font-bold">
+                      {stats?.uniqueUsers || 0}
+                    </p>
                   </div>
                   <Users className="w-8 h-8 text-purple-500" />
                 </div>
@@ -251,8 +280,12 @@ const Analytics = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Total Sessions</p>
-                    <p className="text-3xl font-bold">{stats?.totalSessions || 0}</p>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      Total Sessions
+                    </p>
+                    <p className="text-3xl font-bold">
+                      {stats?.totalSessions || 0}
+                    </p>
                   </div>
                   <FileText className="w-8 h-8 text-orange-500" />
                 </div>
@@ -272,11 +305,16 @@ const Analytics = () => {
               {liveVisitors.length > 0 ? (
                 <div className="space-y-3">
                   {liveVisitors.map((visitor) => (
-                    <div key={visitor.id} className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
+                    <div
+                      key={visitor.id}
+                      className="flex items-center justify-between p-3 rounded-lg bg-muted/30"
+                    >
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                         <div>
-                          <p className="font-medium">Visitor {visitor.id.slice(-8)}</p>
+                          <p className="font-medium">
+                            Visitor {visitor.id.slice(-8)}
+                          </p>
                           <div className="flex items-center gap-4 text-sm text-muted-foreground">
                             <span className="flex items-center gap-1">
                               <MapPin className="w-3 h-3" />
@@ -322,14 +360,19 @@ const Analytics = () => {
                 {stats?.pageViews && stats.pageViews.length > 0 ? (
                   <div className="space-y-3">
                     {stats.pageViews.map(({ path, count }) => (
-                      <div key={path} className="flex justify-between items-center p-3 rounded-lg bg-muted/30">
+                      <div
+                        key={path}
+                        className="flex justify-between items-center p-3 rounded-lg bg-muted/30"
+                      >
                         <span className="font-mono text-sm">{path}</span>
                         <Badge variant="secondary">{count}</Badge>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-muted-foreground text-center py-8">No page views yet</p>
+                  <p className="text-muted-foreground text-center py-8">
+                    No page views yet
+                  </p>
                 )}
               </CardContent>
             </Card>
@@ -345,14 +388,21 @@ const Analytics = () => {
                 {stats?.formSubmissions && stats.formSubmissions.length > 0 ? (
                   <div className="space-y-3">
                     {stats.formSubmissions.map(({ formName, count }) => (
-                      <div key={formName} className="flex justify-between items-center p-3 rounded-lg bg-muted/30">
-                        <span className="capitalize">{formName.replace('-', ' ')}</span>
+                      <div
+                        key={formName}
+                        className="flex justify-between items-center p-3 rounded-lg bg-muted/30"
+                      >
+                        <span className="capitalize">
+                          {formName.replace("-", " ")}
+                        </span>
                         <Badge variant="secondary">{count}</Badge>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-muted-foreground text-center py-8">No form submissions yet</p>
+                  <p className="text-muted-foreground text-center py-8">
+                    No form submissions yet
+                  </p>
                 )}
               </CardContent>
             </Card>
@@ -370,13 +420,20 @@ const Analytics = () => {
               {stats?.recentActivity && stats.recentActivity.length > 0 ? (
                 <div className="space-y-3">
                   {stats.recentActivity.slice(0, 10).map((activity, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-3 rounded-lg bg-muted/30"
+                    >
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
                         <div>
-                          <p className="font-medium capitalize">{activity.type.replace('_', ' ')}</p>
+                          <p className="font-medium capitalize">
+                            {activity.type.replace("_", " ")}
+                          </p>
                           <p className="text-sm text-muted-foreground">
-                            {activity.data.path || activity.data.formName || 'Unknown'}
+                            {activity.data.path ||
+                              activity.data.formName ||
+                              "Unknown"}
                           </p>
                         </div>
                       </div>
@@ -387,7 +444,9 @@ const Analytics = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-muted-foreground text-center py-8">No recent activity</p>
+                <p className="text-muted-foreground text-center py-8">
+                  No recent activity
+                </p>
               )}
             </CardContent>
           </Card>
@@ -398,7 +457,11 @@ const Analytics = () => {
               <Download className="w-4 h-4 mr-2" />
               Export Analytics Data
             </Button>
-            <Button onClick={handleClearData} variant="outline" className="text-destructive hover:text-destructive">
+            <Button
+              onClick={handleClearData}
+              variant="outline"
+              className="text-destructive hover:text-destructive"
+            >
               <Trash2 className="w-4 h-4 mr-2" />
               Clear All Data
             </Button>

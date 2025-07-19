@@ -28,6 +28,14 @@ const Navigation = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const navigateToGetDemo = () => {
+    navigate("/get-demo");
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
+
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== "/") {
       navigate("/");
@@ -126,7 +134,7 @@ const Navigation = () => {
             ))}
             <ThemeToggle />
             <Button
-              onClick={() => navigate("/get-demo")}
+              onClick={navigateToGetDemo}
               size="sm"
               className="button-gradient"
             >
@@ -164,7 +172,7 @@ const Navigation = () => {
                   <Button
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      navigate("/get-demo");
+                      navigateToGetDemo();
                     }}
                     className="button-gradient mt-4"
                   >

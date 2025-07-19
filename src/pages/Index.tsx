@@ -16,6 +16,18 @@ import { useNavigate } from "react-router-dom";
 const Index = () => {
   const navigate = useNavigate();
 
+  const navigateToGetDemo = () => {
+    navigate("/get-demo");
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
+
+  const navigateToGetStarted = () => {
+    window.open("https://velora-dashboard-main.vercel.app/", "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -80,7 +92,7 @@ const Index = () => {
             <Button
               size="lg"
               className="button-gradient"
-              onClick={() => navigate("/get-demo")}
+              onClick={navigateToGetStarted}
             >
               Get Started
             </Button>
@@ -88,7 +100,7 @@ const Index = () => {
               size="lg"
               variant="link"
               className="text-foreground"
-              onClick={() => navigate("/get-demo")}
+              onClick={navigateToGetDemo}
             >
               Request Demo <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
@@ -262,7 +274,7 @@ const Index = () => {
           <Button
             size="lg"
             className="button-gradient"
-            onClick={() => navigate("/get-demo")}
+            onClick={navigateToGetStarted}
           >
             Get Started
             <ArrowRight className="ml-2 w-4 h-4" />

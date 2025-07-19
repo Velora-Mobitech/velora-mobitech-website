@@ -7,6 +7,7 @@ Your Velora website now has comprehensive analytics with a dedicated dashboard p
 ✅ **Visit**: http://localhost:8080/analytics
 
 ### Features:
+
 - **📊 Real-time visitor tracking** - See who's on your site right now!
 - **📈 Live visitor counter** - Updates every 10 seconds
 - **📱 Device detection** - Mobile, tablet, or desktop users
@@ -17,6 +18,7 @@ Your Velora website now has comprehensive analytics with a dedicated dashboard p
 - **🔒 Privacy-friendly** - All data stays in the browser
 
 ### How to Access:
+
 1. **Visit your website**: http://localhost:8080/
 2. **Click "Analytics"** button in the navigation bar
 3. **View real-time data** including live visitors, page views, and form submissions
@@ -24,6 +26,7 @@ Your Velora website now has comprehensive analytics with a dedicated dashboard p
 ## 🚀 **Live Visitor Tracking**
 
 The analytics page shows:
+
 - **Current active visitors** (green pulse indicator)
 - **Visitor device types** (Mobile/Desktop/Tablet)
 - **Current page each visitor is viewing**
@@ -31,6 +34,7 @@ The analytics page shows:
 - **Last activity time** for each visitor
 
 ### How Live Tracking Works:
+
 - Visitors are tracked for **5 minutes** after their last activity
 - Updates automatically every **30 seconds**
 - Shows unique visitor IDs (last 8 characters)
@@ -39,12 +43,14 @@ The analytics page shows:
 ## 📊 **Analytics Dashboard Sections**
 
 ### 1. **Live Metrics**
+
 - 🟢 **Live Visitors**: Currently active users
 - 👁️ **Total Views**: All-time page views
 - 👥 **Unique Users**: Distinct visitors
 - 📄 **Total Sessions**: Browsing sessions
 
 ### 2. **Live Visitors Panel**
+
 - Real-time list of active visitors
 - Current page each visitor is viewing
 - Device type (Mobile/Desktop/Tablet)
@@ -52,16 +58,19 @@ The analytics page shows:
 - Session start time
 
 ### 3. **Page Analytics**
+
 - Most visited pages with view counts
 - Real-time page view tracking
 - Popular content identification
 
 ### 4. **Form Tracking**
+
 - Demo request submissions
 - Form completion rates
 - Lead generation metrics
 
 ### 5. **Recent Activity Feed**
+
 - Last 10 user actions
 - Timestamps for each activity
 - Event types (page views, form submissions, etc.)
@@ -69,6 +78,7 @@ The analytics page shows:
 ## 🎯 **Navigation Access**
 
 The Analytics page is accessible from:
+
 - **Desktop**: "Analytics" button in the main navigation
 - **Mobile**: "Analytics" button in the hamburger menu
 - **Direct URL**: `/analytics`
@@ -83,6 +93,7 @@ The Analytics page is accessible from:
 ## 📱 **Mobile-Friendly Dashboard**
 
 The analytics dashboard is fully responsive:
+
 - **Cards layout** adapts to screen size
 - **Touch-friendly** controls and navigation
 - **Scrollable panels** for long data lists
@@ -91,12 +102,14 @@ The analytics dashboard is fully responsive:
 ## 💾 **Data Management**
 
 ### Export Data:
+
 - Click **"Export Analytics Data"** button
 - Downloads JSON file with all analytics
 - Includes visitor data and event history
 - Date-stamped filename for organization
 
 ### Clear Data:
+
 - Click **"Clear All Data"** button (with confirmation)
 - Removes all stored analytics
 - Resets visitor counters
@@ -129,11 +142,13 @@ The analytics dashboard is fully responsive:
 ## 📈 **Understanding Live Visitors**
 
 ### Active Visitor Criteria:
+
 - Visited a page in the **last 5 minutes**
 - Browser tab is open (detected via localStorage)
 - Updates activity every **30 seconds**
 
 ### Visitor Information Shown:
+
 - **Visitor ID**: Last 8 characters of unique identifier
 - **Current Page**: Which page they're currently viewing
 - **Device Type**: Mobile, Desktop, or Tablet
@@ -143,18 +158,21 @@ The analytics dashboard is fully responsive:
 ## 🔧 **Troubleshooting**
 
 ### No Live Visitors Showing?
+
 - Open the site in multiple browser tabs
 - Wait 30 seconds for updates
 - Check browser console for errors
 - Ensure localStorage is enabled
 
 ### Analytics Not Updating?
+
 - Refresh the analytics page
 - Check internet connection
 - Clear browser cache if needed
 - Verify JavaScript is enabled
 
 ### Missing Data?
+
 - Navigate around your site to generate events
 - Submit test forms to create form data
 - Wait for real visitors to access your site
@@ -165,6 +183,7 @@ The analytics dashboard is fully responsive:
 Your website now has a **professional-grade analytics system** with real-time visitor tracking! 🚀
 
 **Next Steps:**
+
 1. Visit `/analytics` to see your live dashboard
 2. Share your website to start collecting real visitor data
 3. Monitor form submissions and popular pages
