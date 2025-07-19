@@ -12,6 +12,7 @@ import IntegrationSection from "@/components/IntegrationSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { useNavigate } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -281,6 +282,7 @@ const Index = () => {
       <div className="bg-background">
         <Footer />
       </div>
+      <Analytics />
     </div>
   );
 };
