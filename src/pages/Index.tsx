@@ -24,10 +24,6 @@ const Index = () => {
     }, 100);
   };
 
-  const navigateToGetStarted = () => {
-    window.open("https://velora-dashboard-main.vercel.app/", "_blank");
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -92,7 +88,7 @@ const Index = () => {
             <Button
               size="lg"
               className="button-gradient"
-              onClick={navigateToGetStarted}
+              onClick={() => window.open("https://dashboard.veloramobitech.systems/", "_blank")}
             >
               Get Started
             </Button>
@@ -200,7 +196,7 @@ const Index = () => {
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-4 h-4 text-primary" />
                   <span className="text-sm">
-                    krishna@veloramobitech.systems
+                      kv@veloramobitech.systems
                   </span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
@@ -235,7 +231,7 @@ const Index = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span className="text-sm">vijaya@veloramobitech.systems</span>
+                  <span className="text-sm">tvb@veloramobitech.systems</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Phone className="w-4 h-4 text-primary" />
@@ -274,7 +270,7 @@ const Index = () => {
           <Button
             size="lg"
             className="button-gradient"
-            onClick={navigateToGetStarted}
+            onClick={() => window.open("https://dashboard.veloramobitech.systems/", "_blank")}
           >
             Get Started
             <ArrowRight className="ml-2 w-4 h-4" />

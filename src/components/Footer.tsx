@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Button } from "./ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -79,17 +79,7 @@ const Footer = () => {
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
                   <a
-                    href="https://www.facebook.com/VeloraMobitech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="w-4 h-4" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <a
-                    href="https://www.instagram.com/velora_mobitech"
+                    href="https://www.instagram.com/velora.mobitech"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
