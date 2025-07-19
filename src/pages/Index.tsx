@@ -244,7 +244,7 @@ const Index = () => {
       </motion.section>
 
       {/* CTA Section */}
-      <section className="container px-4 py-20 relative bg-background">
+      <section className="container px-4 py-20 relative bg-background" aria-label="Velora E-Mobility Solutions CTA">
         <div
           className="absolute inset-0 opacity-40"
           style={{
@@ -261,18 +261,17 @@ const Index = () => {
           className="bg-background/80 backdrop-blur-lg border border-border rounded-2xl p-8 md:p-12 text-center relative z-10"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to transform your company's mobility?
+            Ready to transform your company's mobility with Velora?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join leading companies who have revolutionized their employee
-            transportation with Velora's intelligent e-mobility solutions.
+            Velora E-Mobility Solutions is India's leading startup for smart transportation, cab sharing, shuttle management, fleet analytics, and sustainable mobility for enterprises, corporates, and startups. Our platform, VeloraMobitech, empowers companies to optimize employee transportation, reduce costs, and achieve green mobility goals. Join innovative companies, HR teams, and business leaders who trust Velora for AI-powered route optimization, real-time analytics, and seamless integration with HRIS, ERP, and finance systems. Discover how VeloraMobitech can revolutionize your workplace mobility, boost productivity, and support your sustainability mission.
           </p>
           <Button
             size="lg"
             className="button-gradient"
             onClick={() => window.open("https://dashboard.veloramobitech.systems/", "_blank")}
           >
-            Get Started
+            Get Started with Velora E-Mobility
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </motion.div>
