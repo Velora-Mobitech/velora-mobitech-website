@@ -75,7 +75,7 @@ const Navigation = () => {
 
   const navItems = [
     {
-      name: "Solutions",
+      name: "Models",
       href: "#features",
       onClick: () => scrollToSection("features"),
     },

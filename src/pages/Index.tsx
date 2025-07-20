@@ -72,9 +72,9 @@ const Index = () => {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl text-left"
           >
-            Velora offers intelligent e-mobility solutions for companies,
-            providing optimized transportation facilities with cab/shuttle
-            sharing, smart routing, and comprehensive fleet management.{" "}
+            Velora delivers structured, scalable transport models designed specifically for corporate needs.
+            Our B2B systems include exclusive company travel and intelligent pooled models with 
+            smart matching algorithms for sustainable mobility.{" "}
             <span className="text-foreground">
               Transform your employee transportation today.
             </span>

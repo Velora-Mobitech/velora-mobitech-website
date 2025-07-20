@@ -9,16 +9,15 @@ export const FeaturesSection = () => {
       {/* Header Section */}
       <div className="max-w-2xl mb-20">
         <h2 className="text-5xl md:text-6xl font-normal mb-6 tracking-tight text-left">
-          Smart E-Mobility
+          B2B Transport
           <br />
           <span className="text-gradient font-medium">
-            Solutions & Features
+            Models & Systems
           </span>
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground text-left">
-          Experience comprehensive e-mobility solutions designed for modern
-          enterprises. From intelligent route optimization to sustainability
-          tracking, we've got your transportation needs covered.
+          Discover our structured, scalable transport models designed specifically for corporate needs. 
+          From exclusive company travel to intelligent pooled systems, we deliver sustainable mobility solutions.
         </p>
       </div>
 

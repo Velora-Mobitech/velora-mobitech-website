@@ -91,14 +91,14 @@ const Footer = () => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-medium">Solutions</h4>
+              <h4 className="font-medium">Transport Models</h4>
               <ul className="space-y-2">
                 <li>
                   <button
                     onClick={() => scrollToSection("features")}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
                   >
-                    Cab & Shuttle Sharing
+                    Exclusive Company Travel
                   </button>
                 </li>
                 <li>
@@ -106,7 +106,7 @@ const Footer = () => {
                     onClick={() => scrollToSection("features")}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
                   >
-                    Company Dashboard
+                    Pooled Inter-Company Travel
                   </button>
                 </li>
                 <li>
@@ -114,7 +114,7 @@ const Footer = () => {
                     onClick={() => scrollToSection("features")}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
                   >
-                    Mobile App
+                    Smart Matching Algorithm
                   </button>
                 </li>
                 <li>
@@ -122,7 +122,7 @@ const Footer = () => {
                     onClick={() => scrollToSection("pricing")}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
                   >
-                    Working Models
+                    Model Comparison
                   </button>
                 </li>
               </ul>

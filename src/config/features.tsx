@@ -11,44 +11,44 @@ import {
 
 export const features = [
   {
-    title: "Smart Cab & Shuttle Sharing",
+    title: "Exclusive Company Travel Model",
     description:
-      "Intelligent cab and shuttle sharing platform for employees with optimized route mapping and cost-effective travel solutions.",
-    icon: <Users className="w-0.0005 h-0.005" />,
+      "Dedicated transportation services for single companies with custom scheduling, flexible grouping (1-3 employees per cab), and full transport management.",
+    icon: <ShieldCheck className="w-0.0005 h-0.005" />,
     image: "/lovable-uploads/86329743-ee49-4f2e-96f7-50508436273d.png",
   },
   {
-    title: "Company Dashboard & Portal",
+    title: "Pooled Inter-Company Travel Model",
     description:
-      "Dedicated management portal for companies to facilitate employee transportation with comprehensive admin controls and analytics.",
-    icon: <BarChart3 className="w-0.0005 h-0.005" />,
+      "Shared rides across multiple companies for higher efficiency, environmental impact reduction, and optimized vehicle usage in dense corporate zones.",
+    icon: <Users className="w-0.0005 h-0.005" />,
     image: "/lovable-uploads/7335619d-58a9-41ad-a233-f7826f56f3e9.png",
   },
   {
-    title: "Employee Mobile App",
+    title: "Employee Dashboard & Analytics",
     description:
-      "User-friendly mobile app for employees to book rides, share journeys, and manage their transportation conveniently.",
-    icon: <MapPin className="w-0.0005 h-0.005" />,
+      "Personalized dashboards showing travel history, costs, and analytics. Eliminates repeated booking and reimbursement claims for employees.",
+    icon: <BarChart3 className="w-0.0005 h-0.005" />,
     image: "/lovable-uploads/b6436838-5c1a-419a-9cdc-1f9867df073d.png",
   },
   {
-    title: "AI-Powered Route Optimization",
+    title: "Smart Transport Matching Algorithm",
     description:
-      "Advanced algorithms for intelligent route mapping, vehicle mode suggestions, ETA predictions, and cost optimization.",
+      "Intelligent algorithm determining optimal vehicle types, scheduling based on bookings, and real-time routing for cost-effectiveness and minimal environmental impact.",
     icon: <ArrowUpDown className="w-0.0005 h-0.005" />,
     image: "/lovable-uploads/79f2b901-8a4e-42a5-939f-fae0828e0aef.png",
   },
   {
-    title: "Fleet Management & Analytics",
+    title: "Company-Level Control & Transparency",
     description:
-      "Real-time analytics on cost, utilization, punctuality, and carbon emissions with automated billing and reporting.",
+      "Employers can monitor routes, ensure official use only, reduce inflated expenses and fraudulent claims with complete transport management.",
     icon: <Wallet className="w-0.0005 h-0.005" />,
     image: "/lovable-uploads/86329743-ee49-4f2e-96f7-50508436273d.png",
   },
   {
-    title: "Green Mobility & Sustainability",
+    title: "Sustainable Transport Ecosystem",
     description:
-      "Scope-3 CO₂ tracking, BRSR/CSRD compliance reporting, and Green-Miles™ rewards for sustainable transportation choices.",
+      "Focus on reducing CO₂ emissions and urban traffic congestion through intelligent pooling and optimized routing for corporate mobility.",
     icon: <Leaf className="w-0.0005 h-0.005" />,
     image: "/lovable-uploads/7335619d-58a9-41ad-a233-f7826f56f3e9.png",
   },

@@ -1,66 +1,68 @@
-# Velora - Smart E-Mobility Solutions
+# Velora - B2B Transport Models
 
 ## About Velora
 
-Velora is an innovative e-mobility startup that revolutionizes workplace transportation by providing intelligent, cost-effective, and sustainable mobility solutions for enterprises and their employees.
+Velora is an innovative e-mobility startup that revolutionizes workplace transportation by providing structured, scalable transport models specifically designed for corporate needs and sustainable mobility solutions.
 
-## What We Do
+## Our Transport Models
 
-### 🚗 **Core Services**
+### 🚗 **B2B Transport Models**
 
-- **Cab/Shuttle Sharing**: Smart ride-sharing platform for company employees
-- **Company Portal**: Dedicated dashboard for transportation management
-- **Employee Mobile App**: User-friendly booking and journey management
-- **Smart Route Optimization**: AI-powered algorithms for efficient travel
+- **Exclusive Company Travel Model**: Dedicated transportation for single companies with custom scheduling
+- **Pooled Inter-Company Travel Model**: Shared rides across organizations for higher efficiency  
+- **Smart Transport Matching Algorithm**: Intelligent vehicle type and routing optimization
+- **Employee Dashboard & Analytics**: Personalized travel management and cost tracking
 
 ### 🏢 **For Companies**
 
-- Hassle-free employee transportation management
-- Cost optimization through fleet sharing and smart routing
-- Real-time analytics on utilization, costs, and carbon emissions
-- Automated billing and expense management
-- API integration with HRIS, ERP, and finance systems
+- Complete transport management with company-level control and transparency
+- Custom scheduling based on travel allowances and employee details
+- Route monitoring to ensure official use and reduce fraudulent claims
+- Flexible grouping options (1-3 employees per cab from same company)
+- Real-time analytics on costs, utilization, and environmental impact
 - BRSR/CSRD compliance with Scope-3 CO₂ tracking
 
 ### 👥 **For Employees**
 
-- Multiple transportation modes based on convenience
-- Flexible app-based booking system
+- Personalized dashboards eliminating repeated booking and reimbursement
+- Travel history, costs, and analytics at their fingertips
 - Automated travel record maintenance
-- Cost savings through shared rides
-- Smart routing to avoid delays
+- Seamless ride experience with intelligent matching
+- Contribution to environmental sustainability through shared transport
 
-## 🛠 **Working Models**
+## 🛠 **Transport Models**
 
-### 1. **Fully Managed Model**
+### 1. **Exclusive Company Travel Model**
 
-- Complete company control over employee transportation
-- Global access controls through management dashboard
-- Monthly billing based on actual usage
-- Comprehensive analytics and reporting
+- Dedicated services for single company employees only
+- Custom scheduling based on travel allowances and pickup/drop locations
+- Flexible grouping (1-3 employees per cab from same company)
+- Complete company control with dedicated employee dashboards
+- Full transport management by Velora
 
-### 2. **Travel Allowance Model**
+### 2. **Pooled Inter-Company Travel Model**
 
-- Fixed monthly credits allocated per employee
-- Route-based fare deduction system
-- Company charged only for credits used
-- Employee self-service management
+- Shared rides across multiple companies for route overlap
+- Higher efficiency through increased pooling probability
+- Primary focus on reducing CO₂ emissions and urban traffic
+- Optimized for dense corporate zones like Bengaluru
+- Environmental impact reduction while maintaining cost benefits
 
-### 3. **Enterprise Custom**
+### 3. **Smart Transport Matching**
 
-- Tailored solutions for large organizations
-- Custom API integrations
-- White-label mobile applications
-- Dedicated account management
+- Intelligent algorithm for optimal vehicle type selection
+- Real-time scheduling based on bookings and traffic
+- Cost-effectiveness and minimal environmental impact
+- Dynamic routing for efficiency optimization
 
 ## 🌟 **Key Features**
 
-- **Smart Route Optimization**: AI-powered routing algorithms
-- **Real-time Analytics**: Cost, utilization, and sustainability metrics
-- **Green Mobility Tracking**: Carbon footprint monitoring and rewards
-- **Fleet Management**: Comprehensive vehicle and driver management
-- **API Integrations**: Seamless connection with enterprise systems
-- **Mobile App**: User-friendly employee application
+- **Smart Transport Matching**: AI-powered vehicle type and routing optimization
+- **Company-Level Control**: Route monitoring and expense fraud prevention
+- **Employee Analytics**: Personal dashboards with travel history and costs
+- **Sustainability Focus**: CO₂ reduction and traffic congestion mitigation
+- **Flexible Models**: Exclusive or pooled transport based on company needs
+- **Full Management**: Complete transport logistics handled by Velora
 
 ## 🚀 **Technology Stack**
 
