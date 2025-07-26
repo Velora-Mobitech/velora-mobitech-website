@@ -10,16 +10,9 @@ import {
   RotateCcw,
   ChevronDown,
   Sparkles,
-  Zap,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import {
-  getGeminiResponse,
-  isGeminiConfigured,
-  getVeloraQuickResponse,
-} from "../lib/gemini";
-import { testGeminiConnection } from "../lib/test-gemini";
 
 interface Message {
   id: string;
@@ -34,7 +27,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hello! I'm Velora's AI assistant powered by advanced AI. I can help you with information about our B2B transport models, pricing, features, or answer any general questions you might have. How can I assist you today?",
+      text: "Hello! I'm Velora's AI assistant. I can help you with information about our B2B transport models, pricing, features, or any general questions. How can I assist you today?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -43,8 +36,6 @@ const ChatBot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [showQuickQuestions, setShowQuickQuestions] = useState(true);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [conversationHistory, setConversationHistory] = useState<string[]>([]);
-  const [isAIEnabled] = useState(isGeminiConfigured());
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
@@ -70,36 +61,16 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Test Gemini connection on component mount (development only)
-  useEffect(() => {
-    if (import.meta.env.DEV && isAIEnabled) {
-      console.log("🧪 Testing Gemini AI connection...");
-      testGeminiConnection().then((success) => {
-        if (success) {
-          console.log("✅ Gemini AI is ready!");
-        } else {
-          console.log(
-            "❌ Gemini AI connection failed - using fallback responses"
-          );
-        }
-      });
-    }
-  }, [isAIEnabled]);
+  // Knowledge base for the chatbot
+  const getResponse = (input: string): string => {
+    const question = input.toLowerCase();
 
-  // AI-powered response handler with fallbacks
-  const getResponse = async (input: string): Promise<string> => {
-    // First check for quick Velora-specific responses
-    const quickResponse = getVeloraQuickResponse(input);
-    if (quickResponse) {
-      return quickResponse;
-    }
-
-    // Handle pricing calculator requests with scroll functionality
+    // Handle pricing calculator requests
     if (
-      input.toLowerCase().includes("calculator") ||
-      input.toLowerCase().includes("calculate") ||
-      input.toLowerCase().includes("show me the pricing calculator") ||
-      input.toLowerCase().includes("estimate my cost")
+      question.includes("calculator") ||
+      question.includes("calculate") ||
+      question.includes("show me the pricing calculator") ||
+      question.includes("estimate my cost")
     ) {
       // Scroll to calculator section
       setTimeout(() => {
@@ -112,28 +83,66 @@ const ChatBot = () => {
       return "🧮 **Pricing Calculator**\n\nI'm scrolling you to our interactive pricing calculator below! You can:\n\n• Enter your company details (employee count, shifts)\n• Choose vehicle types (Sedan, SUV, Tempo Traveller)\n• Select service frequency (Daily, Weekly, Monthly)\n• Add premium features (AC, GPS tracking)\n• Get instant cost estimates and savings\n\nThe calculator will show you both the estimated monthly cost and potential savings compared to traditional transport. Try it out!";
     }
 
-    // Use AI for more complex questions if configured
-    if (isAIEnabled) {
-      try {
-        const aiResponse = await getGeminiResponse(input, conversationHistory);
-
-        // Update conversation history for context
-        setConversationHistory((prev) => [
-          ...prev.slice(-10), // Keep last 10 exchanges for context
-          `User: ${input}`,
-          `Assistant: ${aiResponse}`,
-        ]);
-
-        return aiResponse;
-      } catch (error) {
-        console.error("AI Response failed:", error);
-        // Fall through to backup responses
-      }
+    // Company-specific responses
+    if (question.includes("velora") || question.includes("company")) {
+      return "Velora is an innovative e-mobility startup that revolutionizes workplace transportation through structured B2B transport models. We provide exclusive company travel and pooled inter-company travel systems designed specifically for corporate needs.";
     }
 
-    // Backup responses for when AI is not available
-    const question = input.toLowerCase();
+    if (question.includes("transport model") || question.includes("models")) {
+      return "We offer two main B2B transport models:\n\n1. **Exclusive Company Travel Model** - Dedicated transportation for single companies with custom scheduling and flexible grouping (1-3 employees per cab)\n\n2. **Pooled Inter-Company Travel Model** - Shared rides across multiple companies for higher efficiency and environmental impact reduction\n\nBoth models include smart matching algorithms and employee dashboards.";
+    }
 
+    if (
+      question.includes("pricing") ||
+      question.includes("cost") ||
+      question.includes("price") ||
+      question.includes("calculator") ||
+      question.includes("calculate")
+    ) {
+      return "We offer flexible pricing models:\n\n• **Fully Managed Model** - Complete company control with monthly billing based on actual usage\n• **Travel Allowance Model** - Fixed monthly credits per employee with route-based fare deduction\n• **Enterprise Custom** - Tailored solutions for large organizations\n\n💰 **Try our Pricing Calculator** below the pricing section on our homepage to get an instant estimate based on your specific needs!\n\nFor detailed pricing, please click 'Get Demo' or contact our sales team.";
+    }
+
+    if (question.includes("feature") || question.includes("benefit")) {
+      return "Key features include:\n\n✅ Smart Transport Matching Algorithm\n✅ Company-Level Control & Transparency\n✅ Employee Dashboard & Analytics\n✅ Route monitoring and expense fraud prevention\n✅ Sustainable transport ecosystem\n✅ Real-time cost and utilization analytics\n✅ BRSR/CSRD compliance with CO₂ tracking";
+    }
+
+    if (
+      question.includes("demo") ||
+      question.includes("try") ||
+      question.includes("get started")
+    ) {
+      return "Great! You can get started in two ways:\n\n🚀 **Get Started** - Try our live dashboard immediately\n📝 **Request Demo** - Fill out our demo form for a personalized consultation\n\nBoth options are available in the navigation bar. Would you like me to guide you to either option?";
+    }
+
+    if (question.includes("contact") || question.includes("support")) {
+      return "You can reach us through:\n\n📧 Contact form on our 'Get Demo' page\n🌐 Visit our GitHub: https://github.com/Velora-Mobitech\n💼 LinkedIn: linkedin.com/company/velora-mobitech\n\nOur team typically responds within 24 hours for all inquiries.";
+    }
+
+    if (
+      question.includes("sustainable") ||
+      question.includes("environment") ||
+      question.includes("green")
+    ) {
+      return "Sustainability is at our core! Our transport models focus on:\n\n🌍 Reducing CO₂ emissions through intelligent pooling\n📊 Scope-3 CO₂ tracking for BRSR/CSRD compliance\n🚗 Optimized vehicle usage to reduce urban traffic\n🌱 Environmental impact reduction in dense corporate zones\n\nEspecially effective in cities like Bengaluru where shared commuting significantly reduces individual vehicle use.";
+    }
+
+    if (
+      question.includes("algorithm") ||
+      question.includes("technology") ||
+      question.includes("ai")
+    ) {
+      return "Our Smart Transport Matching Algorithm:\n\n🤖 Determines optimal vehicle types (bike, car, van, bus)\n⏰ Real-time scheduling based on bookings and traffic\n🗺️ Dynamic routing for cost-effectiveness\n📈 Minimizes environmental impact\n🔄 Continuous optimization based on usage patterns";
+    }
+
+    if (
+      question.includes("employee") ||
+      question.includes("dashboard") ||
+      question.includes("personal")
+    ) {
+      return "Employee benefits include:\n\n📊 Personalized dashboards with travel history and costs\n🚫 No more repeated booking or reimbursement claims\n📱 Seamless ride experience with intelligent matching\n💰 Cost tracking and analytics\n🌿 Contribution to environmental sustainability\n📈 Real-time travel insights";
+    }
+
+    // General responses
     if (
       question.includes("hello") ||
       question.includes("hi") ||
@@ -170,36 +179,18 @@ const ChatBot = () => {
     setIsTyping(true);
     setShowQuickQuestions(false);
 
-    try {
-      // Get AI-powered response
-      const responseText = await getResponse(messageText);
+    // Simulate typing delay
+    setTimeout(() => {
+      const botResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        text: getResponse(messageText),
+        isUser: false,
+        timestamp: new Date(),
+      };
 
-      // Simulate typing delay for better UX
-      setTimeout(() => {
-        const botResponse: Message = {
-          id: (Date.now() + 1).toString(),
-          text: responseText,
-          isUser: false,
-          timestamp: new Date(),
-        };
-
-        setMessages((prev) => [...prev, botResponse]);
-        setIsTyping(false);
-      }, 800 + Math.random() * 800);
-    } catch (error) {
-      console.error("Error getting response:", error);
-      setTimeout(() => {
-        const errorResponse: Message = {
-          id: (Date.now() + 1).toString(),
-          text: "I'm having a temporary issue, but I can still help with Velora's transport models, pricing, or getting started with a demo. What would you like to know?",
-          isUser: false,
-          timestamp: new Date(),
-        };
-
-        setMessages((prev) => [...prev, errorResponse]);
-        setIsTyping(false);
-      }, 500);
-    }
+      setMessages((prev) => [...prev, botResponse]);
+      setIsTyping(false);
+    }, 1000 + Math.random() * 1000);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -213,12 +204,11 @@ const ChatBot = () => {
     setMessages([
       {
         id: "1",
-        text: "Hello! I'm Velora's AI assistant powered by advanced AI. I can help you with information about our B2B transport models, pricing, features, or answer any general questions you might have. How can I assist you today?",
+        text: "Hello! I'm Velora's AI assistant. I can help you with information about our B2B transport models, pricing, features, or any general questions. How can I assist you today?",
         isUser: false,
         timestamp: new Date(),
       },
     ]);
-    setConversationHistory([]);
     setShowQuickQuestions(true);
   };
 
@@ -325,23 +315,10 @@ const ChatBot = () => {
                 <Bot className="w-4 h-4" />
               </motion.div>
               <div>
-                <div className="flex items-center gap-1">
-                  <span className="font-semibold text-sm">
-                    Velora Assistant
-                  </span>
-                  {isAIEnabled && (
-                    <motion.div
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="flex items-center"
-                    >
-                      <Zap className="w-3 h-3 text-yellow-400" />
-                    </motion.div>
-                  )}
-                </div>
+                <span className="font-semibold text-sm">Velora Assistant</span>
                 <div className="flex items-center gap-1 text-xs opacity-90">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span>{isAIEnabled ? "AI-Powered" : "Online"}</span>
+                  <span>Online</span>
                 </div>
               </div>
             </div>
