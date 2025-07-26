@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
-import { Switch } from '@/components/ui/switch';
-import { Button } from '@/components/ui/button';
-import { Calculator, Car, Users, Clock, MapPin, Zap } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
+import { Calculator, Car, Users, Clock, MapPin, Zap } from "lucide-react";
 
 interface CalculatorInputs {
   employeeCount: number;
   shifts: number;
   distance: number;
-  vehicleType: 'sedan' | 'suv' | 'tempo';
-  frequency: 'daily' | 'weekly' | 'monthly';
+  vehicleType: "sedan" | "suv" | "tempo";
+  frequency: "daily" | "weekly" | "monthly";
   hasAC: boolean;
   hasGPS: boolean;
 }
@@ -23,8 +29,8 @@ export const PricingCalculator: React.FC = () => {
     employeeCount: 50,
     shifts: 1,
     distance: 20,
-    vehicleType: 'sedan',
-    frequency: 'daily',
+    vehicleType: "sedan",
+    frequency: "daily",
     hasAC: true,
     hasGPS: true,
   });
@@ -39,17 +45,17 @@ export const PricingCalculator: React.FC = () => {
 
     // Basic calculation
     let estimate = inputs.distance * kmRate;
-    
+
     // Multiply by shifts
     estimate *= inputs.shifts;
-    
+
     // Vehicle capacity adjustments
     const vehicleCapacity = {
       sedan: 4,
       suv: 6,
       tempo: 12,
     }[inputs.vehicleType];
-    
+
     const vehiclesNeeded = Math.ceil(inputs.employeeCount / vehicleCapacity);
     estimate *= vehiclesNeeded;
 
@@ -59,7 +65,7 @@ export const PricingCalculator: React.FC = () => {
       weekly: 4,
       monthly: 1,
     }[inputs.frequency];
-    
+
     estimate *= frequencyMultiplier;
 
     // Add premium features
@@ -79,10 +85,12 @@ export const PricingCalculator: React.FC = () => {
       <div className="container px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-normal mb-4">
-            Calculate Your <span className="text-gradient font-medium">Transport Costs</span>
+            Calculate Your{" "}
+            <span className="text-gradient font-medium">Transport Costs</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get an instant estimate of your company's transportation costs and potential savings with Velora's smart mobility solutions.
+            Get an instant estimate of your company's transportation costs and
+            potential savings with Velora's smart mobility solutions.
           </p>
         </div>
 
@@ -95,9 +103,15 @@ export const PricingCalculator: React.FC = () => {
                   <Users className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                   <Input
                     id="employees"
+                    name="employees"
                     type="number"
                     value={inputs.employeeCount}
-                    onChange={(e) => setInputs({...inputs, employeeCount: parseInt(e.target.value) || 0})}
+                    onChange={(e) =>
+                      setInputs({
+                        ...inputs,
+                        employeeCount: parseInt(e.target.value) || 0,
+                      })
+                    }
                     className="pl-10"
                     min="1"
                   />
@@ -110,9 +124,15 @@ export const PricingCalculator: React.FC = () => {
                   <Clock className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                   <Input
                     id="shifts"
+                    name="shifts"
                     type="number"
                     value={inputs.shifts}
-                    onChange={(e) => setInputs({...inputs, shifts: parseInt(e.target.value) || 1})}
+                    onChange={(e) =>
+                      setInputs({
+                        ...inputs,
+                        shifts: parseInt(e.target.value) || 1,
+                      })
+                    }
                     className="pl-10"
                     min="1"
                     max="3"
@@ -126,9 +146,15 @@ export const PricingCalculator: React.FC = () => {
                   <MapPin className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                   <Input
                     id="distance"
+                    name="distance"
                     type="number"
                     value={inputs.distance}
-                    onChange={(e) => setInputs({...inputs, distance: parseInt(e.target.value) || 0})}
+                    onChange={(e) =>
+                      setInputs({
+                        ...inputs,
+                        distance: parseInt(e.target.value) || 0,
+                      })
+                    }
                     className="pl-10"
                     min="1"
                   />
@@ -141,16 +167,21 @@ export const PricingCalculator: React.FC = () => {
                 <Label htmlFor="vehicleType">Vehicle Type</Label>
                 <Select
                   value={inputs.vehicleType}
-                  onValueChange={(value: any) => setInputs({...inputs, vehicleType: value})}
+                  onValueChange={(value: any) =>
+                    setInputs({ ...inputs, vehicleType: value })
+                  }
+                  name="vehicleType"
                 >
-                  <SelectTrigger>
+                  <SelectTrigger id="vehicleType">
                     <Car className="w-4 h-4 mr-2" />
                     <SelectValue placeholder="Select vehicle type" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="sedan">Sedan (4 Seater)</SelectItem>
                     <SelectItem value="suv">SUV (6 Seater)</SelectItem>
-                    <SelectItem value="tempo">Tempo Traveller (12 Seater)</SelectItem>
+                    <SelectItem value="tempo">
+                      Tempo Traveller (12 Seater)
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -159,9 +190,12 @@ export const PricingCalculator: React.FC = () => {
                 <Label htmlFor="frequency">Service Frequency</Label>
                 <Select
                   value={inputs.frequency}
-                  onValueChange={(value: any) => setInputs({...inputs, frequency: value})}
+                  onValueChange={(value: any) =>
+                    setInputs({ ...inputs, frequency: value })
+                  }
+                  name="frequency"
                 >
-                  <SelectTrigger>
+                  <SelectTrigger id="frequency">
                     <Calculator className="w-4 h-4 mr-2" />
                     <SelectValue placeholder="Select frequency" />
                   </SelectTrigger>
@@ -179,7 +213,9 @@ export const PricingCalculator: React.FC = () => {
                   <Switch
                     id="ac"
                     checked={inputs.hasAC}
-                    onCheckedChange={(checked) => setInputs({...inputs, hasAC: checked})}
+                    onCheckedChange={(checked) =>
+                      setInputs({ ...inputs, hasAC: checked })
+                    }
                   />
                 </div>
 
@@ -188,7 +224,9 @@ export const PricingCalculator: React.FC = () => {
                   <Switch
                     id="gps"
                     checked={inputs.hasGPS}
-                    onCheckedChange={(checked) => setInputs({...inputs, hasGPS: checked})}
+                    onCheckedChange={(checked) =>
+                      setInputs({ ...inputs, hasGPS: checked })
+                    }
                   />
                 </div>
               </div>
@@ -198,7 +236,9 @@ export const PricingCalculator: React.FC = () => {
           <div className="mt-8 pt-8 border-t border-border">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 glass rounded-xl text-center">
-                <h3 className="text-lg font-medium mb-2">Estimated Monthly Cost</h3>
+                <h3 className="text-lg font-medium mb-2">
+                  Estimated Monthly Cost
+                </h3>
                 <p className="text-4xl font-bold text-primary">
                   ₹{calculateEstimate().toLocaleString()}
                 </p>
@@ -208,7 +248,9 @@ export const PricingCalculator: React.FC = () => {
               </div>
 
               <div className="p-6 glass rounded-xl text-center">
-                <h3 className="text-lg font-medium mb-2">Potential Monthly Savings</h3>
+                <h3 className="text-lg font-medium mb-2">
+                  Potential Monthly Savings
+                </h3>
                 <p className="text-4xl font-bold text-green-500">
                   ₹{savingsEstimate().toLocaleString()}
                 </p>
@@ -220,7 +262,8 @@ export const PricingCalculator: React.FC = () => {
 
             <div className="mt-6 text-center">
               <p className="text-sm text-muted-foreground mb-4">
-                *This is an approximate estimate. Contact us for a detailed quote and customized solutions.
+                *This is an approximate estimate. Contact us for a detailed
+                quote and customized solutions.
               </p>
               <Button className="button-gradient">
                 Get Detailed Quote <Zap className="ml-2 w-4 h-4" />
