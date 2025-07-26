@@ -39,7 +39,7 @@ const ChatBot = () => {
   const quickQuestions = [
     "What are Velora's transport models?",
     "How does pricing work?",
-    "What features do you offer?",
+    "Show me the pricing calculator",
     "How do I get started?",
     "Tell me about sustainability",
   ];
@@ -56,6 +56,24 @@ const ChatBot = () => {
   const getResponse = (input: string): string => {
     const question = input.toLowerCase();
 
+    // Handle pricing calculator requests
+    if (
+      question.includes("calculator") ||
+      question.includes("calculate") ||
+      question.includes("show me the pricing calculator") ||
+      question.includes("estimate my cost")
+    ) {
+      // Scroll to calculator section
+      setTimeout(() => {
+        const calculatorElement = document.getElementById("calculator");
+        if (calculatorElement) {
+          calculatorElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500);
+      
+      return "🧮 **Pricing Calculator**\n\nI'm scrolling you to our interactive pricing calculator below! You can:\n\n• Enter your company details (employee count, shifts)\n• Choose vehicle types (Sedan, SUV, Tempo Traveller)\n• Select service frequency (Daily, Weekly, Monthly)\n• Add premium features (AC, GPS tracking)\n• Get instant cost estimates and savings\n\nThe calculator will show you both the estimated monthly cost and potential savings compared to traditional transport. Try it out!";
+    }
+
     // Company-specific responses
     if (question.includes("velora") || question.includes("company")) {
       return "Velora is an innovative e-mobility startup that revolutionizes workplace transportation through structured B2B transport models. We provide exclusive company travel and pooled inter-company travel systems designed specifically for corporate needs.";
@@ -68,9 +86,11 @@ const ChatBot = () => {
     if (
       question.includes("pricing") ||
       question.includes("cost") ||
-      question.includes("price")
+      question.includes("price") ||
+      question.includes("calculator") ||
+      question.includes("calculate")
     ) {
-      return "We offer flexible pricing models:\n\n• **Fully Managed Model** - Complete company control with monthly billing based on actual usage\n• **Travel Allowance Model** - Fixed monthly credits per employee with route-based fare deduction\n• **Enterprise Custom** - Tailored solutions for large organizations\n\nFor detailed pricing, please click 'Get Demo' or contact our sales team.";
+      return "We offer flexible pricing models:\n\n• **Fully Managed Model** - Complete company control with monthly billing based on actual usage\n• **Travel Allowance Model** - Fixed monthly credits per employee with route-based fare deduction\n• **Enterprise Custom** - Tailored solutions for large organizations\n\n💰 **Try our Pricing Calculator** below the pricing section on our homepage to get an instant estimate based on your specific needs!\n\nFor detailed pricing, please click 'Get Demo' or contact our sales team.";
     }
 
     if (question.includes("feature") || question.includes("benefit")) {
@@ -352,7 +372,7 @@ const ChatBot = () => {
                         disabled={isTyping}
                       />
                       <Button
-                        onClick={handleSendMessage}
+                        onClick={() => handleSendMessage()}
                         size="sm"
                         disabled={!inputValue.trim() || isTyping}
                       >
