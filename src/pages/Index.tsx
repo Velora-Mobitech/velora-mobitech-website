@@ -274,9 +274,10 @@ const Index = () => {
           transition={{ duration: 0.5 }}
           className="bg-background/80 backdrop-blur-lg border border-border rounded-2xl p-8 md:p-12 text-center relative z-10"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to transform your company's mobility with Velora?
           </h2>
+          {/*
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Velora E-Mobility Solutions is India's leading startup for smart
             transportation, cab sharing, shuttle management, fleet analytics,
@@ -289,7 +290,7 @@ const Index = () => {
             Discover how VeloraMobitech can revolutionize your workplace
             mobility, boost productivity, and support your sustainability
             mission.
-          </p>
+          </p> */}
           <Button
             size="lg"
             className="button-gradient"
