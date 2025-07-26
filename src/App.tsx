@@ -9,6 +9,7 @@ import GetDemo from "./pages/GetDemo";
 import Analytics from "./pages/Analytics";
 import { initGA, trackPageView } from "./lib/analytics";
 import { analytics } from "./lib/simple-analytics";
+import ChatBot from "./components/ChatBot";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/get-demo" element={<GetDemo />} />
             <Route path="/analytics" element={<Analytics />} />
           </Routes>
+          <ChatBot />
         </BrowserRouter>
       </div>
     </TooltipProvider>

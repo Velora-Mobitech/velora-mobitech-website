@@ -11,13 +11,12 @@ export const FeaturesSection = () => {
         <h2 className="text-5xl md:text-6xl font-normal mb-6 tracking-tight text-left">
           B2B Transport
           <br />
-          <span className="text-gradient font-medium">
-            Models & Systems
-          </span>
+          <span className="text-gradient font-medium">Models & Systems</span>
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground text-left">
-          Discover our structured, scalable transport models designed specifically for corporate needs. 
-          From exclusive company travel to intelligent pooled systems, we deliver sustainable mobility solutions.
+          Discover our structured, scalable transport models designed
+          specifically for corporate needs. From exclusive company travel to
+          intelligent pooled systems, we deliver sustainable mobility solutions.
         </p>
       </div>
 

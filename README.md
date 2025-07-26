@@ -9,7 +9,7 @@ Velora is an innovative e-mobility startup that revolutionizes workplace transpo
 ### 🚗 **B2B Transport Models**
 
 - **Exclusive Company Travel Model**: Dedicated transportation for single companies with custom scheduling
-- **Pooled Inter-Company Travel Model**: Shared rides across organizations for higher efficiency  
+- **Pooled Inter-Company Travel Model**: Shared rides across organizations for higher efficiency
 - **Smart Transport Matching Algorithm**: Intelligent vehicle type and routing optimization
 - **Employee Dashboard & Analytics**: Personalized travel management and cost tracking
 

@@ -72,9 +72,10 @@ const Index = () => {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl text-left"
           >
-            Velora delivers structured, scalable transport models designed specifically for corporate needs.
-            Our B2B systems include exclusive company travel and intelligent pooled models with 
-            smart matching algorithms for sustainable mobility.{" "}
+            Velora delivers structured, scalable transport models designed
+            specifically for corporate needs. Our B2B systems include exclusive
+            company travel and intelligent pooled models with smart matching
+            algorithms for sustainable mobility.{" "}
             <span className="text-foreground">
               Transform your employee transportation today.
             </span>
@@ -89,7 +90,12 @@ const Index = () => {
             <Button
               size="lg"
               className="button-gradient"
-              onClick={() => window.open("https://dashboard.veloramobitech.systems/", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://dashboard.veloramobitech.systems/",
+                  "_blank"
+                )
+              }
             >
               Get Started
             </Button>
@@ -196,9 +202,7 @@ const Index = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span className="text-sm">
-                      kv@veloramobitech.systems
-                  </span>
+                  <span className="text-sm">kv@veloramobitech.systems</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Phone className="w-4 h-4 text-primary" />
@@ -245,7 +249,10 @@ const Index = () => {
       </motion.section>
 
       {/* CTA Section */}
-      <section className="container px-4 py-20 relative bg-background" aria-label="Velora E-Mobility Solutions CTA">
+      <section
+        className="container px-4 py-20 relative bg-background"
+        aria-label="Velora E-Mobility Solutions CTA"
+      >
         <div
           className="absolute inset-0 opacity-40"
           style={{
@@ -265,12 +272,24 @@ const Index = () => {
             Ready to transform your company's mobility with Velora?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Velora E-Mobility Solutions is India's leading startup for smart transportation, cab sharing, shuttle management, fleet analytics, and sustainable mobility for enterprises, corporates, and startups. Our platform, VeloraMobitech, empowers companies to optimize employee transportation, reduce costs, and achieve green mobility goals. Join innovative companies, HR teams, and business leaders who trust Velora for AI-powered route optimization, real-time analytics, and seamless integration with HRIS, ERP, and finance systems. Discover how VeloraMobitech can revolutionize your workplace mobility, boost productivity, and support your sustainability mission.
+            Velora E-Mobility Solutions is India's leading startup for smart
+            transportation, cab sharing, shuttle management, fleet analytics,
+            and sustainable mobility for enterprises, corporates, and startups.
+            Our platform, VeloraMobitech, empowers companies to optimize
+            employee transportation, reduce costs, and achieve green mobility
+            goals. Join innovative companies, HR teams, and business leaders who
+            trust Velora for AI-powered route optimization, real-time analytics,
+            and seamless integration with HRIS, ERP, and finance systems.
+            Discover how VeloraMobitech can revolutionize your workplace
+            mobility, boost productivity, and support your sustainability
+            mission.
           </p>
           <Button
             size="lg"
             className="button-gradient"
-            onClick={() => window.open("https://dashboard.veloramobitech.systems/", "_blank")}
+            onClick={() =>
+              window.open("https://dashboard.veloramobitech.systems/", "_blank")
+            }
           >
             Get Started with Velora E-Mobility
             <ArrowRight className="ml-2 w-4 h-4" />

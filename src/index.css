@@ -144,3 +144,33 @@
   pointer-events: none;
   z-index: 1;
 }
+
+/* Chatbot animations */
+@keyframes chatbot-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes chatbot-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-8px);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+}
+
+.chatbot-pulse {
+  animation: chatbot-pulse 2s infinite;
+}
+
+.chatbot-bounce {
+  animation: chatbot-bounce 1s infinite;
+}
