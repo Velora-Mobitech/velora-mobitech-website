@@ -296,7 +296,7 @@ const ChatBot = () => {
             scale: 1,
             opacity: 1,
             y: 0,
-            height: isMinimized ? "64px" : "600px",
+            height: isMinimized ? "64px" : "450px", // here
           }}
           exit={{ scale: 0.8, opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
@@ -307,10 +307,10 @@ const ChatBot = () => {
           }}
         >
           {/* Fixed Header */}
-          <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground relative overflow-hidden flex-shrink-0 sticky top-0 z-20 rounded-t-2xl">
+          <div className="flex items-center justify-between p-2 bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground relative overflow-hidden flex-shrink-0 sticky top-0 z-20 rounded-t-2xl">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-50" />
 
-            <div className="flex items-center gap-3 relative z-10">
+            <div className="flex items-center gap-2 relative z-10">
               <motion.div
                 animate={{
                   rotate: [0, 360],
@@ -320,13 +320,13 @@ const ChatBot = () => {
                   repeat: Infinity,
                   ease: "linear",
                 }}
-                className="w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center"
+                className="w-6 h-6 rounded-full bg-primary-foreground/20 flex items-center justify-center"
               >
-                <Bot className="w-4 h-4" />
+                <Bot className="w-3 h-3" />
               </motion.div>
               <div>
                 <div className="flex items-center gap-1">
-                  <span className="font-semibold text-sm">
+                  <span className="font-semibold text-xs">
                     Velora Assistant
                   </span>
                   {isAIEnabled && (
@@ -339,8 +339,8 @@ const ChatBot = () => {
                     </motion.div>
                   )}
                 </div>
-                <div className="flex items-center gap-1 text-xs opacity-90">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <div className="flex items-center gap-1 text-[10px] opacity-90">
+                  <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
                   <span>{isAIEnabled ? "AI-Powered" : "Online"}</span>
                 </div>
               </div>
@@ -352,10 +352,10 @@ const ChatBot = () => {
                   variant="ghost"
                   size="sm"
                   onClick={clearChat}
-                  className="h-8 w-8 p-0 text-primary-foreground hover:bg-primary-foreground/20 rounded-lg"
+                  className="h-6 w-6 p-0 text-primary-foreground hover:bg-primary-foreground/20 rounded-lg"
                   title="Clear Chat"
                 >
-                  <RotateCcw className="w-4 h-4" />
+                  <RotateCcw className="w-3 h-3" />
                 </Button>
               </motion.div>
 
@@ -364,14 +364,14 @@ const ChatBot = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsMinimized(!isMinimized)}
-                  className="h-8 w-8 p-0 text-primary-foreground hover:bg-primary-foreground/20 rounded-lg"
+                  className="h-6 w-6 p-0 text-primary-foreground hover:bg-primary-foreground/20 rounded-lg"
                   title={isMinimized ? "Expand" : "Minimize"}
                 >
                   <motion.div
                     animate={{ rotate: isMinimized ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Minimize2 className="w-4 h-4" />
+                    <Minimize2 className="w-3 h-3" />
                   </motion.div>
                 </Button>
               </motion.div>
@@ -381,10 +381,10 @@ const ChatBot = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsOpen(false)}
-                  className="h-8 w-8 p-0 text-primary-foreground hover:bg-red-500/20 hover:text-red-100 rounded-lg transition-colors duration-200"
+                  className="h-6 w-6 p-0 text-primary-foreground hover:bg-red-500/20 hover:text-red-100 rounded-lg transition-colors duration-200"
                   title="Close Chat"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-3 h-3" />
                 </Button>
               </motion.div>
             </div>
