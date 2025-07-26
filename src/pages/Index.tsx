@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
 import { PricingSection } from "@/components/pricing/PricingSection";
+import { PricingCalculator } from "@/components/pricing/PricingCalculator";
 import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -129,6 +130,11 @@ const Index = () => {
       {/* Features Section */}
       <div id="features" className="bg-background">
         <FeaturesSection />
+      </div>
+
+      {/* Pricing Calculator Section */}
+      <div className="bg-background">
+        <PricingCalculator />
       </div>
 
       {/* Benefits Section */}
